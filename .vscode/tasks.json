@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-hiddify-manager", // Define the build task
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "pushd ${workspaceFolder} &&make build && (systemctl kill hiddify-panel||echo '')&&popd"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "stop panel service", // Define the build task
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "(systemctl stop --now hiddify-panel||echo '')"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

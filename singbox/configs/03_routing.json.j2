@@ -1,0 +1,85 @@
+{% set region = {
+    'zh': 'cn',
+    'cn': 'cn',
+    'ir': 'ir',
+    'ru': 'ru'
+}.get(hconfigs['country'], 'cn') %}
+
+{% set geo_sites=['spotify','speedtest','google','netflix','nvidia','bytedance','tiktok','unity','reddit','openai'] %}
+{
+  "route": {
+    "rule_set":[
+         {
+            "tag":"geoip-{{region}}",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geoip-{{region}}.srs"
+         },
+         {
+            "tag":"geosite-{{region}}",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-{{region}}.srs"
+         },
+         {% for site in geo_sites %}
+          {
+            "tag":"geosite-{{site}}",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/{{site}}.srs"
+         },
+         {% endfor %}
+
+    ],
+    // "domainStrategy": "AsIs",
+    "final": {% if hconfigs['warp_mode'] == 'all' %}"WARP"{% else %}"freedom"{% endif %},
+      "rules": [
+        {
+            "outbound": "freedom",
+            "port": [53]
+        },
+        {
+          "protocol": "quic",
+          "port": [443],
+          "outbound": "blackhole"
+        },
+        {
+            "outbound": {% if hconfigs['warp_mode'] == 'disable' %}"forbidden_sites"{% else %}"WARP"{% endif %},
+             "rule_set":[
+              "geoip-{{region}}", "geosite-{{region}}"
+             ]
+        },
+        {% if hconfigs['warp_mode'] != 'disable' %}
+          {
+              "outbound": "WARP",
+              "rule_set":[
+                {% for site in geo_sites %}
+                  "geosite-{{site}}",
+                {% endfor %}
+              ]
+          },
+          {% if hconfigs.get('warp_sites','').split('\n') %}
+          {
+              "outbound": "WARP",
+              "domain":[                
+                    {%for d in hconfigs.get('warp_sites','').split('\n')%}
+                        "{{d.strip()}}",
+                    {% endfor %}
+              ]
+          },
+          {% endif %}
+        {% endif %}
+        {
+          "outbound": "blackhole", "geoip": ["private"]
+        }
+        // {// Block BitTorrent protocol
+        //   "type": "field", "outboundTag": "blackhole", "protocol": ["bittorrent"]
+        // },
+      ]
+    }
+  
+
+}

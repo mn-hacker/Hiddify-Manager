@@ -1,0 +1,20 @@
+#!/bin/bash
+source ../../common/utils.sh
+
+useradd -m hiddify-cli -s /bin/bash >/dev/null 2>&1
+
+latest=$(get_release_version hiddify-core)
+
+if [ "$(cat 'VERSION' 2>/dev/null)" != "$latest" ] || ! is_installed ./HiddifyCli; then
+    echo "Downloading HiddifyCli..."
+    pkg=$(dpkg --print-architecture)
+
+    curl -sLo hiddify-cli.tar.gz https://github.com/hiddify/hiddify-core/releases/download/v$latest/hiddify-cli-linux-$pkg.tar.gz
+
+    tar -xzf hiddify-cli.tar.gz
+    rm  hiddify-cli.tar.gz
+    echo $latest> VERSION
+fi
+
+ln -sf /opt/hiddify-manager/other/hiddify-cli/hiddify-cli.service /etc/systemd/system/hiddify-cli.service
+systemctl enable hiddify-cli.service
