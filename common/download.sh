@@ -33,16 +33,16 @@ branch="${1:-release}"
 
 if [[ "$branch" == v* ]]; then
     # If input starts with 'v', treat it as a tag
-    base_url="https://raw.githubusercontent.com/hiddify/Hiddify-Manager/refs/tags/$branch/"
+    base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/tags/$branch/"
 elif [[ "$branch" == "beta" ]]; then
     # If input is 'release' or empty, use main
-    base_url="https://raw.githubusercontent.com/hiddify/Hiddify-Manager/refs/heads/beta/"
+    base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/beta/"
 elif [[ "$branch" == "dev" ]]; then
     # If input is 'release' or empty, use main
-    base_url="https://raw.githubusercontent.com/hiddify/Hiddify-Manager/refs/heads/dev/"
+    base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/dev/"
 else
     # Otherwise, use the input as a branch name
-    base_url="https://raw.githubusercontent.com/hiddify/Hiddify-Manager/refs/heads/main/"
+    base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/main/"
 fi
 curl -sL -o /tmp/hiddify/hiddify_installer.sh $base_url/common/hiddify_installer.sh
 curl -sL -o /tmp/hiddify/utils.sh $base_url/common/utils.sh
