@@ -7,7 +7,8 @@ on:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
     branches: [ main ]
 env:
-    REGISTRY_IMAGE: ghcr.io/${{ github.repository }}
+    # Will be set to lowercase in Prepare step
+    REGISTRY_IMAGE_BASE: ghcr.io
 jobs:
   make-upload-docker:
     permissions: write-all
@@ -32,6 +33,8 @@ jobs:
         run: |
           platform=${{ matrix.platform }}
           echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "REGISTRY_IMAGE=${{ env.REGISTRY_IMAGE_BASE }}/${REPO_LOWER}" >> $GITHUB_ENV
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v3
       - name: Setup Docker Buildx
@@ -77,6 +80,10 @@ jobs:
     env:
       LATEST: "${{ github.ref_type == 'tag' && (contains(github.ref_name, 'b') && 'beta' ||'latest') || 'dev' }}"
     steps:
+      - name: Prepare
+        run: |
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "REGISTRY_IMAGE=ghcr.io/${REPO_LOWER}" >> $GITHUB_ENV
       - name: Download digests
         uses: actions/download-artifact@v4
         with:
