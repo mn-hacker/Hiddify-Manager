@@ -7,7 +7,7 @@ on:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
     branches: [ main ]
 env:
-    REGISTRY_IMAGE: ghcr.io/hiddify/hiddify-manager
+    REGISTRY_IMAGE: ghcr.io/${{ github.repository }}
 jobs:
   make-upload-docker:
     permissions: write-all

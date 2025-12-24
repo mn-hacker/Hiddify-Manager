@@ -2,7 +2,7 @@
 # Before Anything Else...
 We are looking for contributors for this project. Please send email to hiddify@gmail.com
 ```
-git clone --recurse-submodules -j8 git://github.com/hiddify/hiddify-manager.git
+git clone --recurse-submodules -j8 git://github.com/mn-hacker/Hiddify-Manager.git
 
 ```
 Basic tutorial on how to contibute to HiddifyManager is [here](https://hiddify.com/manager/contribution/How-to-contribute-to-this-project/)
