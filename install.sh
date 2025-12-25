@@ -97,7 +97,8 @@ function main() {
         #install_run other/shadowtls $(hconfig "shadowtls_enable")
         
         update_progress "${PROGRESS_ACTION}" "Warp" 70
-        
+        # Always install WARP dependencies (wgcf) so it's ready when user wants to enable it
+        pushd other/warp > /dev/null && bash install.sh && popd > /dev/null
         if [[ $(hconfig "warp_mode") != "disable" ]];then
             install_run other/warp 1 &
         else   
