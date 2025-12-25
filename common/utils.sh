@@ -18,7 +18,7 @@ function get_pre_release_version() {
 }
 
 function get_release_version() {
-    VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" | jq -r 'map(select(.prerelease == false)) | sort_by(.created_at) | last | .tag_name')
+    VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" | jq -r 'map(select(.prerelease == false)) | sort_by(.published_at) | last | .tag_name')
     if [ -z $VERSION ]; then
         # COMMIT_URL=https://api.github.com/repos/hiddify/$1/releases/latest
         # VERSION=$(curl -s --connect-timeout 1 $COMMIT_URL | jq -r .tag_name)
