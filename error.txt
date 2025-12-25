@@ -1,46 +1,72 @@
-root@opsopsops:/opt/hiddify-manager# systemctl status hiddify-cli
-● hiddify-cli.service - HiddifyCli service
-     Loaded: loaded (/etc/systemd/system/hiddify-cli.service; enabled; preset: enabled)
-     Active: activating (auto-restart) (Result: exit-code) since Thu 2025-12-25 13:41:24 +0330; 433>
-    Process: 192596 ExecStart=/opt/hiddify-manager/other/hiddify-cli/HiddifyCli run -c $SUB_LINK -d>
-   Main PID: 192596 (code=exited, status=203/EXEC)
-        CPU: 1ms
-root@opsopsops:/opt/hiddify-manager# ls -la /opt/hiddify-manager/other/hiddify-cli/
-total 44
-drwxr-xr-x  2 hiddify-cli root 4096 Dec 25 13:38 .
-drwxr-xr-x 14 root        root 4096 Dec 25 12:56 ..
--rw-------  1 hiddify-cli root  107 Dec 25 13:38 .env
--rw-r--r--  1 hiddify-cli root    1 Dec 25 13:38 VERSION
--rwxr-xr-x  1 hiddify-cli root  163 Dec 25 12:56 disable.sh
--rw-r--r--  1 hiddify-cli root 1552 Dec 25 12:56 h_client_config.json
--rw-r--r--  1 hiddify-cli root  388 Dec 25 12:56 hiddify-cli.service
--rw-r--r--  1 hiddify-cli root  664 Dec 25 13:38 install.sh
--rw-r--r--  1 hiddify-cli root  664 Dec 25 12:56 install.sh.j2
--rw-r--r--  1 hiddify-cli root  676 Dec 25 13:38 run.sh
--rw-r--r--  1 hiddify-cli root  627 Dec 25 12:56 run.sh.j2
-
-Last login: Thu Dec 25 13:42:18 2025 from 45.89.53.220
+Last login: Thu Dec 25 14:07:40 2025 from 45.89.53.220
 Hiddify: Command Quit
 ==========================================
-root@opsopsops:/opt/hiddify-manager# grep -A20 '"Donation"' /opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations.i18n/fa.json
-  "Donation": {
-    "description": "✳️ برای توسعه این پروژه به کمک شما نیاز دارم.\n<br>\nاگر توانایی برنامه‌نویسی یتولید محتوا را دارید، لطفاً با من از طریق تلگرام به آیدی <a href='https://t.me/MNHACKER' target='_blnk'>@MNHACKER</a> تماس بگیرید.\n<br>\n<br>\nℹ️ همچنین برای توسعه بیشتر این پنل و خدمات آن می توانید ا کمک مالی من را حمایت کنید.\n<br>\n<br>\nروش‌های حمایت مالی:\n <ul>\n    <li> <div class='btn-group>\n        <a role='button' data-copy='UQDS7pN7PDZv2dKeW27Fx4QBPJvdYqlvZfFzmnczSo6VyOql' class='btn btn-secondary copy-link'><i class='fa-regular fa-copy'></i></a>    \n    <a data-copy='UQDS7pN7PDZv2dKeW27Fx4QBPJvdYqlvZfFzmnczSo6VyOql' role='button' class='btn btn-info copy-link'>TON</a> </div></li>\n    \n    <li> <div class='btn-group'>\n        <a role='button' data-copy='ltc1qpl4sgqqsu509l92klllatgmpvna7ucvz3gn29f' class='btn btn-secondary copy-link'><i class='fa-regular fa-copy'></i></a>    \n    <a data-copy='ltc1qpl4sgqqsu509l92klllatgmpvna7ucvz3gn29f' role='button' class='btn btn-info copy-link'>Litecoin</a> </div></li>\n    \n    <li> <div class='btn-group'>\n        <a role='button' data-copy='bc1qd85x4p8ymmmgzdwr8d0xyuafnn3mx56u6mka0e' class='btn btn-secondary copy-link'><i class='fa-regular fa-copy'></i></a>    \n    <a data-copy='bc1qd85x4p8ymmmgzdwr8d0xyuafnn3mx56u6mka0e' role='button' class='btn btn-info copy-link'>Bitcoin</a> </div></li>\n    \n    <li> <div class='btn-group'>\n        <a role='button' data-copy='TPchFnmsfH2eEd1hip6D4QLqKSCYRrFGu1' class='btn btn-secondary copy-link'><i class='fa-regular fa-copy'></i></a>    \n    <a data-copy='TPchFnmsfH2eEd1hip6D4QLqKSCYRrFGu1' role='button' class='btn btn-info copy-link'>Tron</a> </div></li>\n    </ul>",
-    "title": "حمایت"
-  },
-  "Download App": "<i class='fa-solid fa-download'></i> دانلود",
-  "Edit": "ویرایش",
-  "Edit Proxy Names": "✏️ ویرایش پروکسی‌ها",
-  "Enable": "❇️ فعال",
-  "Error in auto cdn format": "⚠️ خطا در ورود IP ها به صورت دستی",
-  "Error! auto cdn ip can not be find, please contact admin.": "خطا! آی پی اتوماتیک نتوانست پیدا شود. لطفا با مدیر تماس بگیرید",
-  "Example Domains": "بررسی و پیشنهاد دامنه",
-  "Expired Users": "کاربران منقضی شده",
-  "Export": "خروجی گرفتن",
-  "Fake": "➖ جعلی",
-  "Filter": "فیلتر",
-  "Finished": "تمام شد...",
-  "From Last Restart": "از آخرین راه اندازی",
-  "From when the user package will be started? Empty for start from first connection": "از چه زمانی پکیج کاربر محاسبه شود؟ برای محاسبه از اولین اتصال خالی بگذارید",
-  "Hiddify": "هیدیفای",
-  "Hiddify Android": "هیدیفای کلش",
-  "HiddifyClash": "HiddifyClash",
+root@opsopsops:/opt/hiddify-manager# journalctl -u hiddify-panel -n 50 --no-pager
+Dec 25 13:38:45 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 1.
+Dec 25 13:38:45 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 13:56:15 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 192454 (python) on client request.
+Dec 25 13:56:15 opsopsops (kill)[193796]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 13:56:15 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 13:56:15 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 13:56:15 opsopsops systemd[1]: hiddify-panel.service: Consumed 16.460s CPU time, 107.6M memory peak, 0B memory swap peak.
+Dec 25 13:57:19 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 13:57:49 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 196937 (python) on client request.
+Dec 25 13:57:49 opsopsops (kill)[203312]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 13:57:49 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 13:57:49 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 13:57:49 opsopsops systemd[1]: hiddify-panel.service: Consumed 2.966s CPU time, 108.9M memory peak, 0B memory swap peak.
+Dec 25 13:57:49 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 1.
+Dec 25 13:57:49 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 203486 (python) on client request.
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to control process 207833 ((kill)) on client request.
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=killed, status=15/TERM
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'signal'.
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Consumed 2.741s CPU time, 107.9M memory peak, 0B memory swap peak.
+Dec 25 13:58:12 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 2.
+Dec 25 13:58:12 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 14:04:15 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 207838 (python) on client request.
+Dec 25 14:04:15 opsopsops (kill)[208409]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 14:04:15 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 14:04:15 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 14:04:15 opsopsops systemd[1]: hiddify-panel.service: Consumed 2.898s CPU time, 102.5M memory peak, 0B memory swap peak.
+-- Boot c8f0491419ac446085025f34c5962a8b --
+Dec 25 14:08:34 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 14:09:04 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 3547 (python) on client request.
+Dec 25 14:09:04 opsopsops (kill)[10133]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 14:09:04 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 14:09:04 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 14:09:04 opsopsops systemd[1]: hiddify-panel.service: Consumed 3.169s CPU time, 115.7M memory peak, 0B memory swap peak.
+Dec 25 14:09:04 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 1.
+Dec 25 14:09:04 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 10335 (python) on client request.
+Dec 25 14:09:52 opsopsops (kill)[16651]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Consumed 2.818s CPU time, 108.1M memory peak, 0B memory swap peak.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 2.
+Dec 25 14:09:52 opsopsops systemd[1]: Started hiddify-panel.service - hiddify panel.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Sent signal SIGTERM to main process 16652 (python) on client request.
+Dec 25 14:09:52 opsopsops (kill)[16657]: hiddify-panel.service: Referenced but unset environment variable evaluates to an empty string: MAINPID
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Control process exited, code=exited, status=1/FAILURE
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Scheduled restart job, restart counter is at 3.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Start request repeated too quickly.
+Dec 25 14:09:52 opsopsops systemd[1]: hiddify-panel.service: Failed with result 'exit-code'.
+Dec 25 14:09:52 opsopsops systemd[1]: Failed to start hiddify-panel.service - hiddify panel.
+root@opsopsops:/opt/hiddify-manager# cat /opt/hiddify-manager/log/system/hiddify_panel.err.log | tail -50
+
+Usage:
+ kill [options] <pid> [...]
+
+Options:
+ <pid> [...]            send signal to every <pid> listed
+ -<signal>, -s, --signal <signal>
+                        specify the <signal> to be sent
+ -q, --queue <value>    integer value to be sent with the signal
+ -l, --list=[<signal>]  list all signal names, or convert one to a name
+ -L, --table            list all signal names in a nice table
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see kill(1).
