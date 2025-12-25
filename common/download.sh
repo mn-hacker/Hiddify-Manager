@@ -35,13 +35,20 @@ if [[ "$branch" == v* ]]; then
     # If input starts with 'v', treat it as a tag
     base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/tags/$branch/"
 elif [[ "$branch" == "beta" ]]; then
-    # If input is 'release' or empty, use main
-    base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/beta/"
+    # Fetch latest pre-release tag from GitHub API
+    beta_tag=$(curl -sL "https://api.github.com/repos/mn-hacker/Hiddify-Manager/releases" | grep -o '"tag_name": *"[^"]*b[^"]*"' | head -1 | cut -d'"' -f4)
+    if [[ -n "$beta_tag" ]]; then
+        echo "Found latest pre-release: $beta_tag"
+        base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/tags/$beta_tag/"
+    else
+        echo "No pre-release found, using main branch"
+        base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/main/"
+    fi
 elif [[ "$branch" == "dev" ]]; then
-    # If input is 'release' or empty, use main
+    # If input is 'dev', use dev branch
     base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/dev/"
 else
-    # Otherwise, use the input as a branch name
+    # Otherwise, use main branch
     base_url="https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/refs/heads/main/"
 fi
 curl -sL -o /tmp/hiddify/hiddify_installer.sh $base_url/common/hiddify_installer.sh
