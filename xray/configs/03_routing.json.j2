@@ -21,6 +21,70 @@
         { //block quic
           "type": "field", "port": 443, "network": "udp", "outboundTag": "blackhole"
         },
+        {% if hconfigs['block_ads_enable'] %}
+        { // Block ads and trackers
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            "geosite:category-ads-all"
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_ads_custom'] %}
+        { // Block custom domains
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            {% for d in hconfigs['block_ads_custom'].split('\n') %}
+            {% if d.strip() %}
+            "domain:{{d.strip()}}",
+            {% endif %}
+            {% endfor %}
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_malware_enable'] %}
+        { // Block malware and phishing
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            "geosite:category-phishing",
+            "geosite:category-malware"
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_social_enable'] %}
+        { // Block social media
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            "geosite:facebook",
+            "geosite:instagram",
+            "geosite:tiktok",
+            "geosite:twitter",
+            "geosite:snapchat",
+            "geosite:linkedin"
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_gambling_enable'] %}
+        { // Block gambling sites
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            "geosite:category-gambling"
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_adult_enable'] %}
+        { // Block adult content
+          "type": "field",
+          "outboundTag": "blackhole",
+          "domain": [
+            "geosite:category-porn"
+          ]
+        },
+        {% endif %}
         {% if hconfigs['warp_mode'] != 'all' %}
         {
             "type": "field", 

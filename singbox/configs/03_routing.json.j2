@@ -32,6 +32,72 @@
             "url":"https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/{{site}}.srs"
          },
          {% endfor %}
+         {% if hconfigs['block_ads_enable'] %}
+         {
+            "tag":"geosite-category-ads-all",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-category-ads-all.srs"
+         },
+         {% endif %}
+         {% if hconfigs['block_malware_enable'] %}
+         {
+            "tag":"geosite-malware",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-malware.srs"
+         },
+         {
+            "tag":"geosite-phishing",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-phishing.srs"
+         },
+         {% endif %}
+         {% if hconfigs['block_social_enable'] %}
+         {
+            "tag":"geosite-facebook",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/facebook.srs"
+         },
+         {
+            "tag":"geosite-instagram",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/instagram.srs"
+         },
+         {
+            "tag":"geosite-twitter",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/twitter.srs"
+         },
+         {% endif %}
+         {% if hconfigs['block_gambling_enable'] %}
+         {
+            "tag":"geosite-category-gambling",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-category-gambling.srs"
+         },
+         {% endif %}
+         {% if hconfigs['block_adult_enable'] %}
+         {
+            "tag":"geosite-nsfw",
+            "type":"remote",
+            "format":"binary",
+            "update_interval":"1d",
+            "url":"https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-nsfw.srs"
+         },
+         {% endif %}
 
     ],
     // "domainStrategy": "AsIs",
@@ -46,6 +112,48 @@
           "port": [443],
           "outbound": "blackhole"
         },
+        {% if hconfigs['block_ads_enable'] %}
+        {
+          "outbound": "blackhole",
+          "rule_set": ["geosite-category-ads-all"]
+        },
+        {% endif %}
+        {% if hconfigs['block_ads_custom'] %}
+        {
+          "outbound": "blackhole",
+          "domain": [
+            {% for d in hconfigs['block_ads_custom'].split('\n') %}
+            {% if d.strip() %}
+            "{{d.strip()}}",
+            {% endif %}
+            {% endfor %}
+          ]
+        },
+        {% endif %}
+        {% if hconfigs['block_malware_enable'] %}
+        {
+          "outbound": "blackhole",
+          "rule_set": ["geosite-malware", "geosite-phishing"]
+        },
+        {% endif %}
+        {% if hconfigs['block_social_enable'] %}
+        {
+          "outbound": "blackhole",
+          "rule_set": ["geosite-facebook", "geosite-instagram", "geosite-twitter"]
+        },
+        {% endif %}
+        {% if hconfigs['block_gambling_enable'] %}
+        {
+          "outbound": "blackhole",
+          "rule_set": ["geosite-category-gambling"]
+        },
+        {% endif %}
+        {% if hconfigs['block_adult_enable'] %}
+        {
+          "outbound": "blackhole",
+          "rule_set": ["geosite-nsfw"]
+        },
+        {% endif %}
         {
             "outbound": {% if hconfigs['warp_mode'] == 'disable' %}"forbidden_sites"{% else %}"WARP"{% endif %},
              "rule_set":[
