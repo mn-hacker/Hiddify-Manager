@@ -1,0 +1,544 @@
+Your Linux distribution is Ubuntu 24.04
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://nginx.org/packages/ubuntu noble InRelease
+Hit:2 https://mirror.hetzner.com/ubuntu/packages noble InRelease
+Hit:3 https://mirror.hetzner.com/ubuntu/packages noble-updates InRelease
+Hit:4 https://mirror.hetzner.com/ubuntu/packages noble-backports InRelease
+Hit:5 https://mirror.hetzner.com/ubuntu/security noble-security InRelease
+Hit:6 https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu noble InRelease
+Ign:7 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble InRelease
+Err:8 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release
+404 Not Found [IP: 2600:1f1c:2e5:6900: e85c: 9286: f36c:1276 443]
+Reading package lists ...
+E: The repository 'https://packagecloud. io/ookla/speedtest-cli/ubuntu noble Release' does not>
+jq: error (at <stdin>:5): Cannot index string with string "prerelease"
+BETA: hiddify panel version current=11.0.20 latest=
+The current beta version is outdated! Updating ...
+
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+Resolved 115 packages in 294ms
+Audited 115 packages in 1ms
+BETA: Current Config Version=11.0.20 -- Latest=11.0.22b
+== other/redis
+======================other/redis====================================={
+
+===install.sh other/redis
+
+=== install.sh common
+
+=== install.sh other/mysql
+== other/mysql
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.lo.disable_ipv6 = 0
+IPv6 Enabled for eth0
+IPv6 Enabled for hiddifywg
+=== run.sh other/redis
+
+* Reloading configuration files for periodic command scheduler cron
+. done.
+
+=== install.sh hiddify-panel
+NOTICE: installing hiddifypanel from bundled src/ ...
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+Resolved 115 packages in 66ms
+Building hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src
+Built hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src
+Prepared 1 package in 1.74s
+Uninstalled 1 package in 17ms
+Installed 1 package in 30ms
+~ hiddifypanel == 11.0.20 (from file:///opt/hiddify-manager/hiddify-panel/src)
+=== run.sh hiddify-panel
+
+=other/mysql
+
+== other/redis
+
+== hiddify-panel
+
+Traceback (most recent call last):
+File "<frozen runpy>", line 198, in _run_module_as_main
+File "<frozen runpy>", line 88, in _run_code
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/_main _. py",>
+main ()
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>
+return self.main(*args, ** kwargs)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078, >
+rv = self. invoke(ctx)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682, >
+cmd_name, cmd, args = self.resolve_command(ctx, args)
+AA
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>
+cmd = self.get_command(ctx, cmd_name)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>
+app = info. load_app()
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>
+app: Flask | None = self. create_app()
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app = create_app(app_mode="cli" if cli else "web")
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app. config.load_extensions("EXTENSIONS")
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>
+initializer(app)
+22N
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>
+from hiddifypanel.panel.init_db import init_db
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/panel/init_db>
+from hiddifypanel.models import *
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/_init>
+from .config_enum import ConfigCategory, ConfigEnum, Lang, ApplyMode, PanelMode, LogLevel
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+class ConfigEnum(metaclass=FastEnum):
+
+...< 251 lines> ..
+return self.name. startswith (other)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+backup_interval = StrConfigDscr(ConfigCategory. telegram_bot, ApplyMode. restart, hide_in_>
+
+AttributeError: type object 'ApplyMode' has no attribute 'restart'
+== hiddify-panel=
+Traceback (most recent call last):
+File "<frozen runpy>", line 198, in _run_module_as_main
+File "<frozen runpy>", line 88, in _run_code
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/_main _. py",>
+main()
+NNNNAA
+
+# type: ignore
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>
+return self.main(*args, ** kwargs)
+1A
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078, >
+rv = self. invoke(ctx)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>
+cmd_name, cmd, args = self.resolve_command(ctx, args)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729, >
+cmd = self.get_command(ctx, cmd_name)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>
+app = info. load_app()
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>
+app: Flask | None = self. create_app()
+1A
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app = create_app(app_mode="cli" if cli else "web")
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app. config. load_extensions ("EXTENSIONS")
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>
+initializer(app)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>
+from hiddifypanel.panel.init_db import init_db
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/panel/init_db>
+from .config_enum import ConfigCategory, ConfigEnum, Lang, ApplyMode, PanelMode, LogLevel
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+class ConfigEnum(metaclass=FastEnum):
+
+...< 251 lines> ...
+return self.name. startswith (other)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+backup_interval = StrConfigDscr(ConfigCategory. telegram_bot, ApplyMode. restart, hide_in_>
+
+AttributeError: type object 'ApplyMode' has no attribute 'restart'
+Traceback (most recent call last):
+File "/opt/hiddify-manager/common/jinja.py", line 15, in <module>
+configs = json. load(f)
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/_init _. py">
+return loads(fp.read(),
+cls=cls, object_hook=object_hook,
+parse_float=parse_float, parse_int=parse_int,
+parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, ** kw)
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/_init _. py">
+return _default_decoder.decode(s)
+
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>
+obj, end = self.raw_decode(s, idx =_ w(s, 0).end())
+
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>
+
+# type: ignore
+nginx=
+
+raise JSONDecodeError("Expecting value", s, err.value) from None
+json. decoder. JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Cleaning up deprecated components ...
+Deprecated components cleanup completed.
+== haproxy:
+=== install.sh haproxy
+=== run.sh common
+
+=== install.sh nginx
+Error: Key not found: speed_test
+Error: Key not found: ssh_server_enable
+other/speedtest=
+=== install.sh other/speedtest
+=other/ssh=
+=== install.sh other/ssh
+Error: Key not found: ssfaketls_enable
+Error: Key not found: telegram_enable
+=other/telegram ==:
+=== install.sh other/telegram
+useradd: user 'nginx' already exists
+=other/ssfaketls =:
+=== install.sh other/ssfaketls
+Total
+
+======= 1
+
+% Received Xferd
+
+Average Speed
+Dload Upload
+
+Time
+Total
+
+Time
+Spent
+
+Time
+Left
+
+Current
+Speed
+
+haproxy 3.2 is already installed
+
+==:
+
+=== install.sh xray
+
+=== install.sh singbox
+
+e
+
+=other/warp=
+=== install.sh other/warp
+=xray:
+
+singbox
+
+=other/wireguard ==
+=== install.sh other/wireguard
+== other/hiddify-cli=
+=== install.sh other/hiddify-cli
+Error: Key not found: wireguard_enable
+Error: Key not found: hiddifycli_enable
+
+100 11809 100 11809
+Downloading package singbox version 1.8.8.h4 for amd64 ... current version is
+deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+=== run.sh other/ssh
+run.sh: line 1: .. /common/utils.sh: No such file or directory
+jq: error (at <stdin>:5): Cannot index string with string "prerelease"
+Service is running on port 22 and path /usr/sbin/sshd
+Package singbox version 1.8.8.h4 downloaded successfully to sb.zip.
+Warning: Could not get version, downloading latest ...
+
+e
+
+OError: Key not >
+
+65805
+
+65972
+
+http://nginx.org/packages/u>
+Service not found or not running
+iptables: Bad rule (does a matching rule exist in that chain?).
+ip6tables: Bad rule (does a matching rule exist in that chain?).
+=== run.sh xray
+
+=== run.sh other/warp
+=== run.sh other/ssfaketls
+=== run.sh other/telegram
+Hit:1 http://nginx.org/packages/ubuntu noble InRelease
+Hit:2 https://mirror.hetzner.com/ubuntu/packages noble InRelease
+Hit:3 https://mirror.hetzner.com/ubuntu/packages noble-updates InRelease
+Hit:4 https://mirror.hetzner.com/ubuntu/packages noble-backports InRelease
+Failed to restart sshd.service: Unit sshd.service not found.
+Hit:5 https://mirror.hetzner.com/ubuntu/security noble-security InRelease
+Hit:6 https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu noble InRelease
+Ignoring xray test
+Ign:7 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble InRelease
+=== run.sh singbox
+Checking WARP
+Err:8 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release
+404 Not Found [IP: 2600:1f1c:2e5:6900: e85c: 9286: f36c:1276 443]
+Reading package lists ...=== run.sh other/hiddify-cli
+
+find: 'configs/01_api.json': No such file or directory
+find: 'configs/01_api.json': No such file or directory
+find: 'configs/01_api.json': No such file or directory
+
+other/speedtest
+== run.sh haproxy
+
+E: The repository 'https://packagecloud. io/ookla/speedtest-cli/ubuntu noble Release' does not>
+Setting permissions on /opt/hiddify-manager/singbox/configs/01_api.json
+chmod: cannot access '/opt/hiddify-manager/singbox/configs/01_api. json': No such file or dire>
+chown: cannot access '/opt/hiddify-manager/singbox/configs/01_api. json': No such file or dire>
+Setting permissions on /opt/hiddify-manager/singbox/configs
+Setting permissions on /opt/hiddify-manager/singbox
+ignoring singbox test
+Checking WARP
+mv: cannot stat 'wgcf-account.toml': No such file or directory
+cp: cannot create regular file 'mtproto_proxy/config/prod-sys. config' : No such file or direct>
+other/telegram
+
+=other/hiddify-cli=
+singbox:
+other/ssfaketls
+other/ssh=
+Job for hiddify-haproxy. service failed because the control process exited with error code.
+See "systemctl status hiddify-haproxy. service" and "journalctl -xeu hiddify-haproxy. service" >
+=haproxy:
+==== acme. sh
+=== install.sh acme.sh
+[Wed Dec 31 23:23:56 +0330 2025] Removing cron job
+no crontab for root
+=== run.sh nginx
+Setting permissions on /opt/hiddify-manager/nginx/parts/short-link.conf
+Setting permissions on /opt/hiddify-manager/nginx/parts
+Setting permissions on /opt/hiddify-manager/nginx
+[Wed Dec 31 23:23:56 +0330 2025] Registering account: https://acme.zeross1.com/v2/DV90
+=== run.sh other/wireguard
+* Reloading configuration files for periodic command scheduler cron
+.done.
+
+Checking WARP
+
+nginx
+other/wireguard=
+
+mv: cannot stat 'wgcf-account.toml': No such file or directory
+[Wed Dec 31 23:23:57 +0330 2025] Already registered
+[Wed Dec 31 23:23:57 +0330 2025] ACCOUNT_THUMBPRINT='O-2bfJKJXouDPQWQWGtFOECjHbLKK-0aNnIvahdK>
+hiddify-haproxy.service is not active, cannot reload.
+=== run.sh acme.sh
+Certificate cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt) file not found. Genera>
+Private key file cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt.key) not found. Ge>
+ay=
+
+New certificate and private key generated.
+hiddify-haproxy.service is not active, cannot reload.
+== acme.sh =:
+Generating WARP config ...
+Starting WARP .... checking real connectivitiy
+WARP is not working!
+Checking real connectivitiy again!
+{
+
+"country"
+"org"
+"query"
+
+WARP is WORKING!
+
+"Finland",
+: "Cloudflare WARP",
+: "104.28.222.14"
+
+=== other/warp=
+-Finished!
+Job for hiddify-panel.service failed.
+See "systemctl status hiddify-panel. service" and "journalctl -xeu hiddify-panel. service" for >
+=== install.sh common
+
+=== install.sh other/redis
+== other/mysq1
+=== install.sh other/mysql
+=== run.sh other/redis
+
+== other/redis:
+
+other/mysq1
+other/redis
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.lo.disable_ipv6 = 0
+IPv6 Enabled for eth0
+IPv6 Enabled for hiddifywg
+* Reloading configuration files for periodic command scheduler cron
+... done.
+=hiddify-panel:
+=== install.sh hiddify-panel
+NOTICE: installing hiddifypanel from bundled src/ ...
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+Resolved 115 packages in 77ms
+Building hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src
+Built hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src
+Prepared 1 package in 1.67s
+Uninstalled 1 package in 13ms
+Installed 1 package in 47ms
+~ hiddifypanel == 11.0.20 (from file:///opt/hiddify-manager/hiddify-panel/src)
+=== run.sh hiddify-panel
+Traceback (most recent call last) :
+File "<frozen runpy>", line 198, in _run_module_as_main
+File "<frozen runpy>", line 88, in _run_code
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/_main _. py",>
+main ()
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>
+return self.main(*args, ** kwargs)
+NNNNN
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078, >
+rv = self.invoke(ctx)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>
+cmd_name, cmd, args = self.resolve_command(ctx, args)
+NNN
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>
+cmd = self.get_command(ctx, cmd_name)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>
+app = info. load_app()
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>
+app: Flask | None = self. create_app()
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app = create_app(app_mode="cli" if cli else "web")
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>
+app. config. load_extensions ("EXTENSIONS")
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>
+initializer(app)
+AA
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>
+from hiddifypanel.panel.init_db import init_db
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/panel/init_db>
+from hiddifypanel.models import *
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/_init>
+from .config_enum import ConfigCategory, ConfigEnum, Lang, ApplyMode, PanelMode, LogLevel
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+class ConfigEnum(metaclass=FastEnum) :
+
+...
+
+<251 lines>
+return self.name. startswith(other)
+
+# type: ignore
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+backup_interval = StrConfigDscr(ConfigCategory. telegram_bot, ApplyMode. restart, hide_in_>
+
+AttributeError: type object 'ApplyMode' has no attribute 'restart'
+== hiddify-panel=
+Traceback (most recent call last):
+File "<frozen runpy>", line 198, in _run_module_as_main
+File "<frozen runpy>", line 88, in _run_code
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/_main _. py",>
+main ()
+NNNNAA
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157, >
+return self.main(*args, ** kwargs)
+AAA
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>
+rv = self.invoke(ctx)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>
+cmd_name, cmd, args = self.resolve_command(ctx, args)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729, >
+cmd = self.get_command(ctx, cmd_name)
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>
+app = info. load_app()
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>
+app: Flask | None = self. create_app()
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>
+initializer(app)
+hA
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>
+from hiddifypanel.panel.init_db import init_db
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/panel/init_db>
+from hiddifypanel.models import *
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/_init>
+from .config_enum import ConfigCategory, ConfigEnum, Lang, ApplyMode, PanelMode, LogLevel
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+class ConfigEnum(metaclass=FastEnum) :
+AAA
+...< 251 lines> ..
+return self.name. startswith(other)
+
+File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/models/config>
+backup_interval = StrConfigDscr(ConfigCategory. telegram_bot, ApplyMode. restart, hide_in_>
+
+AttributeError: type object 'ApplyMode' has no attribute 'restart'
+Traceback (most recent call last):
+File "/opt/hiddify-manager/common/jinja.py", line 15, in <module>
+configs = json. load(f)
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/_init _. py">
+return loads(fp.read(),
+cls=cls, object_hook=object_hook,
+parse_float=parse_float, parse_int=parse_int,
+
+22N
+
+UNN
+
+# type: ignore
+nginx
+
+=haproxy ==
+
+% Total
+
+Time
+Total
+
+Time
+Spent
+
+Time
+Left
+
+========== {
+
+Current
+Speed
+
+parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, ** kw)
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/_init _. py">
+return _default_decoder. decode(s)
+AAA
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>
+obj, end = self.raw_decode(s, idx =_ w(s, 0).end())
+
+File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>
+raise JSONDecodeError("Expecting value", s, err.value) from None
+json. decoder. JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Cleaning up deprecated components ...
+Deprecated components cleanup completed.
+=== run.sh common
+
+=== install.sh nginx
+
+=== install.sh haproxy
+useradd: user 'nginx' already exists
+Error: Key not found: speed_test
+Error: Key not found: ssh_server_enable
+Error: Key not found: telegram_enable
+% Received % Xferd Average Speed
+Dload Upload
+
+=other/speedtest=
+=== install.sh other/speedtest
+
