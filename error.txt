@@ -1,6 +1,224 @@
-Checking for update...                                                                        │ ▒
-▒│ Creating a backup ...                                                                         │ ▒
-▒│ backup/2026_01_01__15_17_56.json                                                              │ ▒
-▒│ beta Latest panel version: null Installed: 11.0.20 Lastest manager version: 11.0.31b Installe>│ ▒
-▒│ /dev/fd/63: line 1: 404:: command not found                                                   │ ▒
-▒│ ---------------------Finished!------------------------
+root@opsopsops:/opt/hiddify-manager# bash <(curl -Ls https://raw.githubusercontent.com/mn-hacker/Hiddify-Manager/main/common/download.sh) beta
+/dev/fd/63 input params are beta
+Downloading 'beta'
+Found latest pre-release: v11.0.35b
+Your Linux distribution is Ubuntu 24.04
+
+
+
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+Hiddify: Command Quit
+==========================================
+root@opsopsops:/opt/hiddify-manager# cat /opt/hiddify-manager/log/system/0-install.log
+####0####Please wait...####We are going to install Hiddify...####
+####2####Applying...####Common Tools and Requirements####
+===install.sh common
+======================other/redis====================================={
+===run.sh other/redis
+======================other/mysql====================================={
+}========================other/mysql===================================
+}========================other/redis===================================
+Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.lo.disable_ipv6 = 0
+IPv6 Enabled for eth0
+ * Reloading configuration files for periodic command scheduler cron
+   ...done.
+======================hiddify-panel====================================={
+===run.sh hiddify-panel
+}========================hiddify-panel===================================
+####5####HiddifyPanel####Reading Configs from Panel...####
+####8####Applying Configs####...####
+Error rendering /opt/hiddify-manager/singbox/configs/03_routing.json.j2: No test named 'trim'.
+Traceback (most recent call last):
+  File "/opt/hiddify-manager/common/jinja.py", line 55, in render
+    rendered_content = template.render(**configs, exec=exec, os=os)
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/opt/hiddify-manager/singbox/configs/03_routing.json.j2", line 121, in top-level template code
+    {% set custom_list = hconfigs.get('block_ads_custom', '').split('\n') | select('trim') | reject('equalto', '') | list %}
+    ^^^^^^^^^^^^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/async_utils.py", line 48, in wrapper
+    return normal_func(*args, **kwargs)
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/filters.py", line 1365, in sync_do_list
+    return list(value)
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/filters.py", line 1797, in select_or_reject
+    for item in value:
+                ^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/filters.py", line 1798, in select_or_reject
+    if func(item):
+       ~~~~^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/filters.py", line 1783, in <lambda>
+    return lambda item: modfunc(func(transfunc(item)))
+                                ~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/filters.py", line 1778, in func
+    return context.environment.call_test(name, item, args, kwargs, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/environment.py", line 594, in call_test
+    return self._filter_test_common(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        name, value, args, kwargs, context, eval_ctx, False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/jinja2/environment.py", line 526, in _filter_test_common
+    raise TemplateRuntimeError(msg)
+jinja2.exceptions.TemplateRuntimeError: No test named 'trim'.
+Rendering: /opt/hiddify-manager/nginx/nginx.conf.j2
+Rendering: /opt/hiddify-manager/nginx/parts/hiddify.conf.j2
+Rendering: /opt/hiddify-manager/nginx/conf.d/xray-base.conf.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_10_ss_ws_new.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_4100_hysteria.json.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/decoy_domain.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_02_xtls_main.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/01_api.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_03_dispatcher_h2.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/03_routing.json.j2
+Rendering: /opt/hiddify-manager/nginx/parts/common.conf.j2
+Rendering: /opt/hiddify-manager/nginx/parts/short-link.conf.j2
+Rendering: /opt/hiddify-manager/nginx/parts/def-link.conf.j2
+Rendering: /opt/hiddify-manager/nginx/parts/proxy_to_panel.conf.j2
+Rendering: /opt/hiddify-manager/nginx/conf.d/singbox-base.conf.j2
+Rendering: /opt/hiddify-manager/nginx/conf.d/speedtest.conf.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_1030_shadowtls.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_10_ss_new.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_2000_socks_main.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/06_outbounds.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_2039_vmess_new.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/03_routing.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_4010_tuic.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/00_log.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_2061_reality_main.json.j2
+Rendering: /opt/hiddify-manager/haproxy/haproxy.cfg.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/http_domain.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/sni_h2.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/path_h2.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_03_dispatcher.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_02_kcp_main.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_01_api.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_02_reality_main.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/09_reverse.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/08_stats.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/02_dns.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/00_log.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_02_socks_main.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/07_transport.json.j2
+Rendering: /opt/hiddify-manager/other/wireguard/run.sh.j2
+Rendering: /opt/hiddify-manager/other/wireguard/install.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/run.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/install.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/python/config.py.j2
+Rendering: /opt/hiddify-manager/other/telegram/orig/tgproxy_run.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/erlang/run.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/erlang/prod-sys.config.j2
+Rendering: /opt/hiddify-manager/other/telegram/erlang/install.sh.j2
+Rendering: /opt/hiddify-manager/other/telegram/tgo/mtg.toml.j2
+Rendering: /opt/hiddify-manager/other/ssfaketls/hiddify-ss-faketls.service.j2
+Rendering: /opt/hiddify-manager/other/deprecated/shadowtls/shadowtls.conf.j2
+Rendering: /opt/hiddify-manager/other/hiddify-cli/run.sh.j2
+Rendering: /opt/hiddify-manager/other/hiddify-cli/install.sh.j2
+Rendering: /opt/hiddify-manager/other/v2ray/config-v2ray.json.j2
+Rendering: /opt/hiddify-manager/other/warp/wireguard/run.sh.j2
+Rendering: /opt/hiddify-manager/nginx/parts/proxy_to_static.conf.j2
+Rendering: /opt/hiddify-manager/nginx/parts/proxy_path.conf.j2
+Rendering: /opt/hiddify-manager/singbox/configs/01_api.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/05_inbounds_new.json.j2
+Rendering: /opt/hiddify-manager/singbox/configs/02_dns.json.j2
+Rendering: /opt/hiddify-manager/common/run.sh.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/path_v10.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/sni.j2
+Rendering: /opt/hiddify-manager/haproxy/maps/path.j2
+Rendering: /opt/hiddify-manager/xray/configs/04_policy.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/06_outbounds.json.j2
+Rendering: /opt/hiddify-manager/xray/configs/05_inbounds_new.json.j2
+Cleaning up deprecated components...
+Deprecated components cleanup completed.
+####10####Configuring...####System and Firewall settings####
+####15####Applying...####Nginx####
+===run.sh common
+======================nginx====================================={
+####35####Applying...####Personal SpeedTest####
+===run.sh nginx
+####20####Applying...####Haproxy for Spliting Traffic####
+======================haproxy====================================={
+===run.sh haproxy
+####40####Applying...####Telegram Proxy####
+####45####Applying...####FakeTlS Proxy####
+####55####Applying...####SSH Proxy####
+####70####Applying...####Warp####
+Error: Key not found: ssfaketls_enable
+======================other/telegram====================================={
+===disable.sh other/telegram
+======================other/ssfaketls====================================={
+===run.sh other/ssfaketls
+======================other/speedtest====================================={
+}========================other/speedtest===================================
+======================other/ssh====================================={
+===disable.sh other/ssh
+Setting permissions on /opt/hiddify-manager/nginx/parts/short-link.conf
+Setting permissions on /opt/hiddify-manager/nginx/parts
+Setting permissions on /opt/hiddify-manager/nginx
+####75####Applying...####Xray####
+======================other/warp====================================={
+======================xray====================================={
+####80####Applying...####HiddifyCli####
+===run.sh xray
+===disable.sh other/warp
+####85####Applying...####Wireguard####
+####95####Applying...####Singbox####
+======================singbox====================================={
+####98####Applying...####Almost Finished####
+===run.sh singbox
+======================other/hiddify-cli====================================={
+===run.sh other/hiddify-cli
+======================other/wireguard====================================={
+===disable.sh other/wireguard
+Ignoring xray test
+}========================other/ssh===================================
+}========================other/telegram===================================
+Setting permissions on /opt/hiddify-manager/singbox/configs/01_api.json
+}========================other/hiddify-cli===================================
+}========================other/ssfaketls===================================
+Setting permissions on /opt/hiddify-manager/singbox/configs
+Setting permissions on /opt/hiddify-manager/singbox
+ignoring singbox test
+Service is running on port 22 and path /usr/sbin/sshd
+Service not found or not running
+iptables: Bad rule (does a matching rule exist in that chain?).
+ip6tables: Bad rule (does a matching rule exist in that chain?).
+}========================other/warp===================================
+}========================haproxy===================================
+####30####Applying...####Getting Certificates####
+======================acme.sh====================================={
+===run.sh acme.sh
+}========================other/wireguard===================================
+Failed to restart sshd.service: Unit sshd.service not found.
+}========================xray===================================
+}========================singbox===================================
+}========================nginx===================================
+resolving domain 65.108.87.237.sslip.io : IP=65.108.87.237 IPv6=   ServerIP=65.108.87.237 ServerIPv6=2a01:4f9:c013:61e8::1
+ * Reloading configuration files for periodic command scheduler cron
+   ...done.
+[Fri Jan  2 00:53:14 +0330 2026] Domains not changed.
+[Fri Jan  2 00:53:14 +0330 2026] Skipping. Next renewal time is: 2026-01-30T10:43:45Z
+[Fri Jan  2 00:53:14 +0330 2026] Add '--force' to force renewal.
+[Fri Jan  2 00:53:14 +0330 2026] Domains not changed.
+[Fri Jan  2 00:53:14 +0330 2026] Skipping. Next renewal time is: 2026-01-30T10:43:45Z
+[Fri Jan  2 00:53:14 +0330 2026] Add '--force' to force renewal.
+[Fri Jan  2 00:53:14 +0330 2026] The domain '65.108.87.237.sslip.io' seems to already have an ECC cert, let's use it.
+[Fri Jan  2 00:53:14 +0330 2026] Installing key to: /opt/hiddify-manager/ssl/65.108.87.237.sslip.io.crt.key
+[Fri Jan  2 00:53:14 +0330 2026] Installing full chain to: /opt/hiddify-manager/ssl/65.108.87.237.sslip.io.crt
+[Fri Jan  2 00:53:14 +0330 2026] Running reload cmd: echo success
+success
+[Fri Jan  2 00:53:14 +0330 2026] Reload successful
+Not an RSA key
+read EC key
+EC Key valid.
+writing EC key
+writing RSA key
+}========================acme.sh===================================
+---------------------Finished!------------------------
