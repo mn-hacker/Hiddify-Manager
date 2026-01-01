@@ -138,7 +138,7 @@ function update_panel() {
         ;;
         beta)
             activate_python_venv
-            latest=$(get_pre_release_version hiddify-panel)
+            latest=$(get_pre_release_version hiddifypanel)
             warning "BETA: hiddify panel version current=$current_panel_version latest=$latest"
             if [[ "$current_panel_version" != "$latest" ]]; then
                 error "The current beta version is outdated! Updating..."
@@ -212,7 +212,7 @@ function update_config() {
             fi
         ;;
         beta)
-            local latest=$(get_pre_release_version hiddify-manager)
+            local latest=$(get_pre_release_version Hiddify-Manager)
             echo "BETA: Current Config Version=$current_config_version -- Latest=$latest"
             if [[ "$force" == "true" || "$latest" != "$current_config_version" ]]; then
                 update_progress "Updating..." "Hiddify Config from $current_config_version to $latest" 60
