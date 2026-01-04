@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 activate_python_venv
 install_package wireguard libev-dev libevdev2 default-libmysqlclient-dev build-essential pkg-config ssh
 
@@ -19,6 +19,25 @@ if ! grep -Fxq "source /opt/hiddify-manager/.venv313/bin/activate" "/home/hiddif
     echo "export PATH=/opt/hiddify-manager/.venv313/bin:\$PATH" >> "/home/hiddify-panel/.bashrc"
 fi
 
+# Configure MySQL password in app.cfg BEFORE installing panel
+if [ -f "../other/mysql/mysql_pass" ]; then
+    MYSQL_PASS=$(cat ../other/mysql/mysql_pass)
+    # Update SQLALCHEMY_DATABASE_URI
+    sed -i '/^SQLALCHEMY_DATABASE_URI/d' app.cfg
+    echo "SQLALCHEMY_DATABASE_URI ='mysql+mysqldb://hiddifypanel:$MYSQL_PASS@localhost/hiddifypanel?charset=utf8mb4'" >> app.cfg
+fi
+
+# Configure Redis password in app.cfg
+if [ -f "../other/redis/redis.conf" ]; then
+    REDIS_PASS=$(grep '^requirepass' "../other/redis/redis.conf" | awk '{print $2}')
+    if [ -n "$REDIS_PASS" ]; then
+        sed -i '/^REDIS_URI/d' app.cfg
+        echo "REDIS_URI_MAIN = 'redis://:${REDIS_PASS}@127.0.0.1:6379/0'" >> app.cfg
+        echo "REDIS_URI_SSH = 'redis://:${REDIS_PASS}@127.0.0.1:6379/1'" >> app.cfg
+    fi
+fi
+
+chmod 600 app.cfg
 
 ln -sf $(pwd)/hiddify-panel.service /etc/systemd/system/hiddify-panel.service
 systemctl enable hiddify-panel.service
