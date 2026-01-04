@@ -1,5 +1,5 @@
-source ../common/utils.sh
-source ../common/package_manager.sh
+source /opt/hiddify-manager/common/utils.sh
+source /opt/hiddify-manager/common/package_manager.sh
 # latest= #$(get_release_version hiddify-sing-box)
 version="" #use specific version if needed otherwise it will use the latest
 mkdir -p bin run

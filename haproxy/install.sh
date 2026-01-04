@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 rm -rf *.template
 if is_installed sniproxy; then
     # systemctl kill hiddify-sniproxy > /dev/null 2>&1

@@ -4,7 +4,7 @@
 # sed -i "s|REALITY_SERVER_NAMES|server $REALITY_SERVER_NAMES_HAPROXY|g" haproxy.cfg
 
 #
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 
 chmod 600 *.cfg*
 # systemctl reload hiddify-haproxy

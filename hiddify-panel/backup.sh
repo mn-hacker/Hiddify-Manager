@@ -1,6 +1,6 @@
 #!/bin/bash
 cd $( dirname -- "$0"; )
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 
 function main(){
     activate_python_venv

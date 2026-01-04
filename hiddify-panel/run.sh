@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 activate_python_venv
 
 echo -n "" >> ../log/system/panel.log
@@ -12,7 +12,12 @@ chmod 600 app.cfg
 sed -i '/^SQLALCHEMY_DATABASE_URI/d' app.cfg
 if [ -z "${SQLALCHEMY_DATABASE_URI}" ]; then
     if [ -z "${MYSQL_PASS}" ];then
-        MYSQL_PASS=$(cat ../other/mysql/mysql_pass)
+        if [ -f "../other/mysql/mysql_pass" ]; then
+            MYSQL_PASS=$(cat ../other/mysql/mysql_pass)
+            echo "run.sh: MySQL password loaded (length: ${#MYSQL_PASS})"
+        else
+            echo "run.sh: ERROR - mysql_pass file not found!"
+        fi
     fi
     SQLALCHEMY_DATABASE_URI="mysql+mysqldb://hiddifypanel:$MYSQL_PASS@localhost/hiddifypanel?charset=utf8mb4"
 fi
@@ -21,7 +26,7 @@ echo "SQLALCHEMY_DATABASE_URI ='$SQLALCHEMY_DATABASE_URI'" >>app.cfg
 sed -i '/^REDIS_URI/d' app.cfg
 if [ -z "${REDIS_URI_MAIN}" ]; then
     if [ -z "${REDIS_PASS}" ];then
-        REDIS_PASS=$(grep '^requirepass' "../other/redis/redis.conf" | awk '{print $2}')
+        REDIS_PASS=$(grep '^requirepass' "../other/redis/redis.conf" 2>/dev/null | awk '{print $2}')
     fi
     REDIS_URI_MAIN="redis://:${REDIS_PASS}@127.0.0.1:6379/0"
     REDIS_URI_SSH="redis://:${REDIS_PASS}@127.0.0.1:6379/1"

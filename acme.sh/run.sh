@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 source ./cert_utils.sh
 
 # domains=$(cat ../current.json | jq -r '.domains[] | select(.mode | IN("direct", "cdn", "worker", "relay", "auto_cdn_ip", "old_xtls_direct", "sub_link_only")) | .domain')

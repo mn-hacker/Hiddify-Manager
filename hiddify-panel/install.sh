@@ -20,11 +20,24 @@ if ! grep -Fxq "source /opt/hiddify-manager/.venv313/bin/activate" "/home/hiddif
 fi
 
 # Configure MySQL password in app.cfg BEFORE installing panel
+# Wait for mysql_pass file to be created (max 30 seconds)
+for i in {1..30}; do
+    if [ -f "../other/mysql/mysql_pass" ]; then
+        break
+    fi
+    echo "Waiting for mysql_pass... ($i/30)"
+    sleep 1
+done
+
 if [ -f "../other/mysql/mysql_pass" ]; then
     MYSQL_PASS=$(cat ../other/mysql/mysql_pass)
+    echo "MySQL password loaded (length: ${#MYSQL_PASS})"
     # Update SQLALCHEMY_DATABASE_URI
     sed -i '/^SQLALCHEMY_DATABASE_URI/d' app.cfg
     echo "SQLALCHEMY_DATABASE_URI ='mysql+mysqldb://hiddifypanel:$MYSQL_PASS@localhost/hiddifypanel?charset=utf8mb4'" >> app.cfg
+    echo "MySQL URI configured in app.cfg"
+else
+    echo "WARNING: mysql_pass file not found! Panel DB connection will fail."
 fi
 
 # Configure Redis password in app.cfg
@@ -34,6 +47,7 @@ if [ -f "../other/redis/redis.conf" ]; then
         sed -i '/^REDIS_URI/d' app.cfg
         echo "REDIS_URI_MAIN = 'redis://:${REDIS_PASS}@127.0.0.1:6379/0'" >> app.cfg
         echo "REDIS_URI_SSH = 'redis://:${REDIS_PASS}@127.0.0.1:6379/1'" >> app.cfg
+        echo "Redis URI configured in app.cfg"
     fi
 fi
 

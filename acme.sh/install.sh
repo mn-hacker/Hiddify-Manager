@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 install_package socat
 remove_package certbot
 
