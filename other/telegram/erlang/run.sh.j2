@@ -1,11 +1,40 @@
 #!/bin/bash
 
 MTPROXY_DIR="/opt/hiddify-manager/other/telegram/erlang/mtproto_proxy"
+
+# Ensure the proxy was built
+if [ ! -d "$MTPROXY_DIR/_build/prod/rel/mtp_proxy" ]; then
+    echo "MTProxy not built, skipping..."
+    exit 0
+fi
+
 cd "$MTPROXY_DIR" || exit 1
 
-# Copy the config file
+# Ensure config directory exists
+mkdir -p config
+
+# Create vm.args if not exists
+if [ ! -f config/prod-vm.args ]; then
+    if [ -f config/vm.args.example ]; then
+        cp config/vm.args.example config/prod-vm.args
+    else
+        cat > config/prod-vm.args << 'VMARGS'
+-name mtp_proxy@127.0.0.1
+-setcookie mtproto_proxy
++K true
++A 10
+-env ERL_MAX_PORTS 65536
+VMARGS
+    fi
+fi
+
+# Copy the main config file
 cp /opt/hiddify-manager/other/telegram/erlang/prod-sys.config config/prod-sys.config
 chmod 600 config/prod-sys.config
+
+# Create log directory
+mkdir -p /var/log/mtproto-proxy
+chmod 755 /var/log/mtproto-proxy
 
 # Create start.sh script that runs the proxy in foreground
 cat > "$MTPROXY_DIR/start.sh" << 'STARTEOF'

@@ -98,9 +98,12 @@ else
   sed -i "/Your server is vulnerable/d" /etc/motd
 fi
 
-# Restart sshd/ssh
-sudo systemctl restart sshd.service
-sudo systemctl restart ssh.service
+# Restart ssh service (Ubuntu 24.04 uses ssh.service, older uses sshd.service)
+if systemctl list-units --type=service | grep -q 'sshd.service'; then
+    sudo systemctl restart sshd.service 2>/dev/null || true
+elif systemctl list-units --type=service | grep -q 'ssh.service'; then
+    sudo systemctl restart ssh.service 2>/dev/null || true
+fi
 
 {% if hconfigs['firewall'] %}
 iptables -P INPUT DROP

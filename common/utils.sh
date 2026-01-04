@@ -12,33 +12,53 @@ function get_commit_version() {
 
 function get_pre_release_version() {
     # Use tags API instead of releases API - find latest tag containing 'b' (beta)
-    VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/tags" | jq -r '.[].name' | grep -E 'b$|beta' | head -1)
+    local response=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/tags" 2>/dev/null)
+    VERSION=""
+    
+    # Check if response is valid JSON array
+    if echo "$response" | jq -e 'type == "array"' >/dev/null 2>&1; then
+        VERSION=$(echo "$response" | jq -r '.[].name' 2>/dev/null | grep -E 'b$|beta' | head -1)
+    fi
+    
     if [ -z "$VERSION" ] || [ "$VERSION" == "null" ]; then
-        # Fallback to releases API if no beta tag found
-        VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" | jq -r 'map(select(.prerelease == true)) | sort_by(.created_at) | last | .tag_name')
+        # Fallback to releases API
+        response=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" 2>/dev/null)
+        if echo "$response" | jq -e 'type == "array"' >/dev/null 2>&1; then
+            VERSION=$(echo "$response" | jq -r 'map(select(.prerelease == true)) | sort_by(.created_at) | last | .tag_name' 2>/dev/null)
+        fi
     fi
     VERSION=${VERSION/#v/}
-    echo $VERSION
+    echo ${VERSION:-""}
 }
 
 function get_release_version() {
     # Use tags API instead of releases API - find latest tag NOT containing 'b' (stable)
-    VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/tags" | jq -r '.[].name' | grep -vE 'b$|beta|dev|alpha' | head -1)
+    local response=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/tags" 2>/dev/null)
+    VERSION=""
+    
+    # Check if response is valid JSON array
+    if echo "$response" | jq -e 'type == "array"' >/dev/null 2>&1; then
+        VERSION=$(echo "$response" | jq -r '.[].name' 2>/dev/null | grep -vE 'b$|beta|dev|alpha' | head -1)
+    fi
+    
     if [ -z "$VERSION" ] || [ "$VERSION" == "null" ]; then
-        # Fallback to releases API if no stable tag found
-        VERSION=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" | jq -r 'map(select(.prerelease == false)) | sort_by(.published_at) | last | .tag_name')
+        # Fallback to releases API
+        response=$(curl -sL "https://api.github.com/repos/mn-hacker/$1/releases" 2>/dev/null)
+        if echo "$response" | jq -e 'type == "array"' >/dev/null 2>&1; then
+            VERSION=$(echo "$response" | jq -r 'map(select(.prerelease == false)) | sort_by(.published_at) | last | .tag_name' 2>/dev/null)
+        fi
     fi
     if [ -z "$VERSION" ] || [ "$VERSION" == "null" ]; then
         # Last fallback - get latest release location
-        location=$(curl -sI "https://github.com/mn-hacker/$1/releases/latest" | grep -i location | awk -F' ' '{print $2}' | tr -d '\r')
+        location=$(curl -sI "https://github.com/mn-hacker/$1/releases/latest" 2>/dev/null | grep -i location | awk -F' ' '{print $2}' | tr -d '\r')
         if [[ $location == *"latest"* ]]; then
-            location=$(curl -sI "$location" | grep -i location | awk -F' ' '{print $2}' | tr -d '\r')
+            location=$(curl -sI "$location" 2>/dev/null | grep -i location | awk -F' ' '{print $2}' | tr -d '\r')
         fi
         VERSION=$(echo $location | rev | awk -F/ '{print $1}' | rev)
         VERSION="${VERSION//$'\r'/}"
     fi
     VERSION=${VERSION/#v/}
-    echo $VERSION
+    echo ${VERSION:-""}
 }
 
 function hiddifypanel_path() {

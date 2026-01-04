@@ -17,13 +17,10 @@ is_ok_domain_zerossl() {
 
 # List of Certificate Authorities to try (in order of preference)
 # Format: "server_name|description|needs_eab"
+# Note: Removed buypass, google, ssl.com as they may not be accessible from all regions
 CA_SERVERS=(
     "letsencrypt|Let's Encrypt|no"
-    "buypass|Buypass|no"
-    "google|Google Trust Services|no"
     "zerossl|ZeroSSL|eab"
-    "ssl.com|SSL.com|no"
-    "letsencrypt_test|Let's Encrypt Staging|no"
 )
 
 function try_get_cert_with_ca() {
@@ -94,6 +91,23 @@ function get_cert() {
     echo "=========================================="
     echo "Getting SSL certificate for: $DOMAIN"
     echo "=========================================="
+
+    # Check if we already have a valid certificate (not expiring within 30 days)
+    if [ -f "$ssl_cert_path/$DOMAIN.crt" ] && [ -f "$ssl_cert_path/$DOMAIN.crt.key" ]; then
+        local expire_date=$(openssl x509 -enddate -noout -in "$ssl_cert_path/$DOMAIN.crt" 2>/dev/null | cut -d= -f2-)
+        if [ -n "$expire_date" ]; then
+            local expire_epoch=$(date -d "$expire_date" +%s 2>/dev/null)
+            local now_epoch=$(date +%s)
+            local days_left=$(( (expire_epoch - now_epoch) / 86400 ))
+            
+            if [ "$days_left" -gt 30 ]; then
+                echo "✓ Existing certificate is valid for $days_left more days, skipping renewal."
+                return 0
+            else
+                echo "Certificate expires in $days_left days, attempting renewal..."
+            fi
+        fi
+    fi
 
     # Check domain length (Let's Encrypt limit is 64 chars)
     if [ ${#DOMAIN} -gt 64 ]; then
