@@ -1,65 +1,1093 @@
-root@opsopsops:/opt/hiddify-manager# find /opt -name "messages.po" 2>/dev/null
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/ru/LC_MESSAGES/messages.po
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/fa/LC_MESSAGES/messages.po
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/en/LC_MESSAGES/messages.po
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/my/LC_MESSAGES/messages.po
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/pt/LC_MESSAGES/messages.po
-/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/translations/zh/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/ru/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/fa/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/en/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/my/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/pt/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/translations/zh/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/ru/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/fa/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/en/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/my/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/pt/LC_MESSAGES/messages.po
-/opt/hiddify-manager/hiddify-panel/src/build/lib/hiddifypanel/translations/zh/LC_MESSAGES/messages.po
-root@opsopsops:/opt/hiddify-manager# ls -la /opt/hiddify-manager/
-total 592
-drwxr-xr-x 16 root          root             4096 Jan  2 13:49  .
-drwxr-xr-x  3 root          root             4096 Jan  2 13:48  ..
-drwxr-xr-x  6 root          root             4096 Jan  2 13:48  .venv313
--rw-r--r--  1 root          root             3637 Jan  2 13:43  CONTRIBUTING.md
--rw-r--r--  1 root          root              566 Jan  2 13:43  Dockerfile
--rw-r--r--  1 root          root           184615 Jan  2 13:43 'Finalizing GitHub Release Push.md'
--rw-r--r--  1 root          root           130694 Jan  2 13:43  HISTORY.md
--rw-r--r--  1 root          root            35149 Jan  2 13:43  LICENSE
--rw-r--r--  1 root          root             7500 Jan  2 13:43  LICENSE.md
--rw-r--r--  1 root          root             3003 Jan  2 13:43  Makefile
--rw-r--r--  1 root          root            16782 Jan  2 13:43  README.md
--rw-r--r--  1 root          root            13775 Jan  2 13:43  README_cn.md
--rw-r--r--  1 root          root            16937 Jan  2 13:43  README_fa.md
--rw-r--r--  1 root          root            14770 Jan  2 13:43  README_ru.md
--rw-r--r--  1 root          root                8 Jan  2 13:43  VERSION
-drwxr-xr-x  4 root          root             4096 Jan  2 13:49  acme.sh
--rwxr-xr-x  1 root          root              118 Jan  2 13:43  apply_configs.sh
-drwxr-xr-x  3 root          root             4096 Jan  2 13:43  btn-deploy
--rw-r--r--  1 root          root              597 Jan  2 13:43  cloud-init.yml
-drwxr-xr-x  3 root          root             4096 Jan  2 13:49  common
--rw-r--r--  1 root          root              315 Jan  2 13:43  config.env.default
--rw-------  1 root          root            13794 Jan  2 13:51  current.json
--rw-r--r--  1 root          root             1796 Jan  2 13:43  docker-compose.yml
--rwxr-xr-x  1 root          root             1434 Jan  2 13:43  docker-init.sh
--rw-r--r--  1 root          root               74 Jan  2 13:43  docker.env
-drwxr-xr-x  2 root          root             4096 Jan  2 13:43  docs
--rw-r--r--  1 root          root             8004 Jan  2 13:43  error.txt
-drwxr-xr-x  6 root          root             4096 Jan  2 13:49  haproxy
-drwxr-xr-x  4 hiddify-panel hiddify-panel    4096 Jan  2 13:49  hiddify-panel
--rwxr-xr-x  1 root          root             7021 Jan  2 13:43  install.sh
-drwxr-xr-x  3 root          root             4096 Jan  2 13:49  log
--rwxr-xr-x  1 root          root             6242 Jan  2 13:43  menu.sh
-drwxr-xr-x  5 nginx         hiddify-common   4096 Jan  2 13:49  nginx
-drwxr-xr-x  3 root          root             4096 Jan  2 13:43  operations
-drwxr-xr-x 14 root          root             4096 Jan  2 13:43  other
--rw-r--r--  1 root          root              634 Jan  2 13:43  release
--rwxr-xr-x  1 root          root             1678 Jan  2 13:43  restart.sh
-drwxr-xr-x  4 root          hiddify-common   4096 Jan  2 13:49  singbox
-drw-------  2 root          root             4096 Jan  2 13:49  ssl
--rwxr-xr-x  1 root          root             2138 Jan  2 13:43  status.sh
--rwxr-xr-x  1 root          root              544 Jan  2 13:43  uninstall.sh
--rwxr-xr-x  1 root          root             3761 Jan  2 13:43  update.sh
--rw-r--r--  1 root          root                0 Jan  2 13:43  uv.toml
-drwxr-xr-x  5 root          root             4096 Jan  2 13:49  xray
+Your Linux distribution is Ubuntu 24.04                                                       │ ▒
+▒│                                                                                               │ ▒
+▒│ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.               │ ▒
+▒│                                                                                               │ ▒
+▒│ Hit:1 https://mirror.hetzner.com/ubuntu/packages noble InRelease                              │ ▒
+▒│ Hit:2 http://nginx.org/packages/ubuntu noble InRelease                                        │ ▒
+▒│ Get:3 https://mirror.hetzner.com/ubuntu/packages noble-updates InRelease [126 kB]             │ ▒
+▒│ Get:4 https://mirror.hetzner.com/ubuntu/packages noble-backports InRelease [126 kB]           │ ▒
+▒│ Get:5 https://mirror.hetzner.com/ubuntu/security noble-security InRelease [126 kB]            │ ▒
+▒│ Hit:6 https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu noble InRelease             │ ▒
+▒│ Ign:7 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble InRelease                      │ ▒
+▒│ Err:8 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release                        │ ▒
+▒│   404  Not Found [IP: 2600:1f1c:2e5:6901:29c4:f22:250b:e71 443]                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ E: The repository 'https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release' does not>│ ▒
+▒│ Using CPython 3.13.11                                                                         │ ▒
+▒│ Creating virtual environment at: /opt/hiddify-manager/.venv313                                │ ▒
+▒│ Activate with: source /opt/hiddify-manager/.venv313/bin/activate                              │ ▒
+▒│ BETA: hiddify panel version current=- latest=null                                             │ ▒
+▒│ The current beta version is outdated! Updating...                                             │ ▒
+▒│                                                                                               │ ▒
+▒│ Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313                            │ ▒
+▒│ Resolved 115 packages in 437ms                                                                │ ▒
+▒│ Prepared 115 packages in 44ms                                                                 │ ▒
+▒│ Installed 115 packages in 443ms
+│  + aiohappyeyeballs==2.6.1                                                                    │ ▒
+▒│  + aiohttp==3.11.18                                                                           │ ▒
+▒│  + aiosignal==1.4.0                                                                           │ ▒
+▒│  + amqp==5.3.1                                                                                │ ▒
+▒│  + aniso8601==10.0.1                                                                          │ ▒
+▒│  + annotated-types==0.7.0                                                                     │ ▒
+▒│  + ansi2html==1.9.2                                                                           │ ▒
+▒│  + anyio==4.12.0                                                                              │ ▒
+▒│  + apiflask==2.4.0                                                                            │ ▒
+▒│  + apispec==6.9.0                                                                             │ ▒
+▒│  + asgiref==3.11.0                                                                            │ ▒
+▒│  + async-timeout==4.0.3                                                                       │ ▒
+▒│  + attrs==25.4.0                                                                              │ ▒
+▒│  + babel==2.16.0                                                                              │ ▒
+▒│  + billiard==4.2.4                                                                            │ ▒
+▒│  + bjoern==3.2.2                                                                              │ ▒
+▒│  + bleach==6.2.0                                                                              │ ▒
+▒│  + blinker==1.9.0                                                                             │ ▒
+▒│  + bootstrap-flask==2.4.1                                                                     │ ▒
+▒│  + cachecontrol==0.14.4                                                                       │ ▒
+▒│  + cachelib==0.13.0                                                                           │ ▒
+▒│  + celery==5.6.1                                                                              │ ▒
+▒│  + certifi==2026.1.4                                                                          │ ▒
+▒│  + cffi==2.0.0                                                                                │ ▒
+▒│  + charset-normalizer==3.4.4                                                                  │ ▒
+▒│  + click==8.1.7
+  + click-didyoumean==0.3.1                                                                    │ ▒
+▒│  + click-plugins==1.1.1.2                                                                     │ ▒
+▒│  + click-repl==0.3.0                                                                          │ ▒
+▒│  + cloudflare==3.1.0                                                                          │ ▒
+▒│  + cryptography==41.0.7                                                                       │ ▒
+▒│  + distro==1.9.0                                                                              │ ▒
+▒│  + dotenv==0.9.9                                                                              │ ▒
+▒│  + dynaconf==3.2.12                                                                           │ ▒
+▒│  + fastenumplus==1.4.0                                                                        │ ▒
+▒│  + filelock==3.20.2                                                                           │ ▒
+▒│  + flask==3.0.3                                                                               │ ▒
+▒│  + flask-admin==1.6.1                                                                         │ ▒
+▒│  + flask-adminlte3==1.0.9                                                                     │ ▒
+▒│  + flask-apispec==0.11.4                                                                      │ ▒
+▒│  + flask-babel==4.0.0                                                                         │ ▒
+▒│  + flask-classful==0.16.0                                                                     │ ▒
+▒│  + flask-httpauth==4.8.0                                                                      │ ▒
+▒│  + flask-login==0.6.3                                                                         │ ▒
+▒│  + flask-marshmallow==1.3.0                                                                   │ ▒
+▒│  + flask-restful==0.3.10                                                                      │ ▒
+▒│  + flask-session==0.8.0                                                                       │ ▒
+▒│  + flask-sqlalchemy==3.1.1                                                                    │ ▒
+▒│  + flask-wtf==1.2.2                                                                           │ ▒
+▒│  + frozenlist==1.8.0                                                                          │ ▒
+▒│  + greenlet==3.3.0                                                                            │ ▒
+▒│  + grpcio==1.76.0
+  + grpcio-tools==1.71.2                                                                       │ ▒
+▒│  + h11==0.16.0                                                                                │ ▒
+▒│  + hiddifypanel==11.0.13                                                                      │ ▒
+▒│  + httpcore==1.0.9                                                                            │ ▒
+▒│  + httpx==0.28.1                                                                              │ ▒
+▒│  + idna==3.11                                                                                 │ ▒
+▒│  + itsdangerous==2.2.0                                                                        │ ▒
+▒│  + jinja2==3.1.6                                                                              │ ▒
+▒│  + json5==0.13.0                                                                              │ ▒
+▒│  + kombu==5.6.2                                                                               │ ▒
+▒│  + loguru==0.7.2                                                                              │ ▒
+▒│  + markupsafe==3.0.2                                                                          │ ▒
+▒│  + marshmallow==3.26.1                                                                        │ ▒
+▒│  + maxminddb==2.6.2                                                                           │ ▒
+▒│  + msgpack==1.1.2                                                                             │ ▒
+▒│  + msgspec==0.20.0                                                                            │ ▒
+▒│  + multidict==6.7.0                                                                           │ ▒
+▒│  + mysqlclient==2.2.5                                                                         │ ▒
+▒│  + packaging==25.0                                                                            │ ▒
+▒│  + ping3==4.0.8                                                                               │ ▒
+▒│  + prompt-toolkit==3.0.52                                                                     │ ▒
+▒│  + propcache==0.4.1                                                                           │ ▒
+▒│  + protobuf==5.28.3                                                                           │ ▒
+▒│  + psutil==6.1.0                                                                              │ ▒
+▒│  + psutils==3.3.14                                                                            │ ▒
+▒│  + puremagic==2.0.0b4
+ + pycparser==2.23                                                                            │ ▒
+▒│  + pydantic==2.9.2                                                                            │ ▒
+▒│  + pydantic-core==2.23.4                                                                      │ ▒
+▒│  + pymysql==1.1.1                                                                             │ ▒
+▒│  + pypdf==6.5.0                                                                               │ ▒
+▒│  + pytelegrambotapi==4.23.0                                                                   │ ▒
+▒│  + python-dateutil==2.9.0.post0                                                               │ ▒
+▒│  + python-dotenv==1.0.1                                                                       │ ▒
+▒│  + python-redis-cache==4.0.1                                                                  │ ▒
+▒│  + python-slugify==8.0.4                                                                      │ ▒
+▒│  + pytz==2025.2                                                                               │ ▒
+▒│  + pyyaml==6.0.2                                                                              │ ▒
+▒│  + redis==5.2.0                                                                               │ ▒
+▒│  + requests==2.32.3                                                                           │ ▒
+▒│  + setuptools==80.0.0                                                                         │ ▒
+▒│  + six==1.17.0                                                                                │ ▒
+▒│  + sniffio==1.3.1                                                                             │ ▒
+▒│  + sonora==0.2.3                                                                              │ ▒
+▒│  + sqlalchemy==2.0.45                                                                         │ ▒
+▒│  + sqlalchemy-utils==0.41.2                                                                   │ ▒
+▒│  + strenum==0.4.15                                                                            │ ▒
+▒│  + text-unidecode==1.3                                                                        │ ▒
+▒│  + typing-extensions==4.15.0                                                                  │ ▒
+▒│  + tzdata==2025.3                                                                             │ ▒
+▒│  + tzlocal==5.3.1                                                                             │ ▒
+▒│  + ua-parser==1.0.1
+  + ua-parser-builtins==202601                                                                 │ ▒
+▒│  + urllib3==1.26.20                                                                           │ ▒
+▒│  + user-agents==2.2.0                                                                         │ ▒
+▒│  + vine==5.1.0                                                                                │ ▒
+▒│  + wcwidth==0.2.14                                                                            │ ▒
+▒│  + webargs==8.7.1                                                                             │ ▒
+▒│  + webencodings==0.5.1                                                                        │ ▒
+▒│  + werkzeug==3.0.6                                                                            │ ▒
+▒│  + wtforms==3.1.2                                                                             │ ▒
+▒│  + xtlsapi==3.3.0                                                                             │ ▒
+▒│  + yarl==1.22.0                                                                               │ ▒
+▒│ BETA: Current Config Version=- -- Latest=11.0.40b                                             │ ▒
+▒│ ===install.sh common                                                                          │ ▒
+▒│ ======================other/redis====================================={                       │ ▒
+▒│ ===install.sh other/redis                                                                     │ ▒
+▒│ ======================other/mysql====================================={                       │ ▒
+▒│ ===install.sh other/mysql                                                                     │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-redis.service → /opt/hidd>│ ▒
+▒│ mariadb-server version  is not installed.                                                     │ ▒
+▒│                                                                                               │ ▒
+▒│ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.               │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ The following additional packages will be installed:
+   libmariadb3 mariadb-client mariadb-client-core mariadb-common                               │ ▒
+▒│   mariadb-server-core                                                                         │ ▒
+▒│ Suggested packages:                                                                           │ ▒
+▒│   mailx mariadb-test                                                                          │ ▒
+▒│ Recommended packages:                                                                         │ ▒
+▒│   libdbd-mariadb-perl | libdbd-mysql-perl libhtml-template-perl                               │ ▒
+▒│   mariadb-plugin-provider-bzip2 mariadb-plugin-provider-lz4                                   │ ▒
+▒│   mariadb-plugin-provider-lzma mariadb-plugin-provider-lzo                                    │ ▒
+▒│   mariadb-plugin-provider-snappy pv                                                           │ ▒
+▒│ The following NEW packages will be installed:                                                 │ ▒
+▒│   libmariadb3 mariadb-client mariadb-client-core mariadb-common mariadb-server                │ ▒
+▒│   mariadb-server-core                                                                         │ ▒
+▒│ 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.                                │ ▒
+▒│ Need to get 15.6 MB of archives.                                                              │ ▒
+▒│ After this operation, 185 MB of additional disk space will be used.                           │ ▒
+▒│ Get:1 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 mariadb-common >│ ▒
+▒│ Get:2 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 libmariadb3 amd>│ ▒
+▒│ Get:3 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 mariadb-client->│ ▒
+▒│ Get:4 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 mariadb-client >│ ▒
+▒│ Get:5 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 mariadb-server->│ ▒
+▒│ Get:6 https://mirror.hetzner.com/ubuntu/packages noble-updates/universe amd64 mariadb-server >│ ▒
+▒│ Preconfiguring packages ...                                                                   │ ▒
+▒│ Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313                            │ ▒
+▒│ Fetched 15.6 MB in 0s (32.0 MB/s)                                                             │ ▒
+▒│ net.ipv6.conf.all.disable_ipv6 = 0                                                            │ ▒
+▒│ Selecting previously unselected package mariadb-common.
+                                                                                               │ ▒
+▒│ (Reading database ...                                                                         │ ▒
+▒│ net.ipv6.conf.default.disable_ipv6 = 0                                                        │ ▒
+▒│ net.ipv6.conf.lo.disable_ipv6 = 0                                                             │ ▒
+▒│ (Reading database ... 5%                                                                      │ ▒
+▒│ (Reading database ... 10%                                                                     │ ▒
+▒│ (Reading database ... 15%                                                                     │ ▒
+▒│ (Reading database ... 20%                                                                     │ ▒
+▒│ (Reading database ... 25%                                                                     │ ▒
+▒│ (Reading database ... 30%                                                                     │ ▒
+▒│ (Reading database ... 35%                                                                     │ ▒
+▒│ (Reading database ... 40%                                                                     │ ▒
+▒│ (Reading database ... 45%                                                                     │ ▒
+▒│ (Reading database ... 50%                                                                     │ ▒
+▒│ (Reading database ... 55%                                                                     │ ▒
+▒│ (Reading database ... 60%                                                                     │ ▒
+▒│ (Reading database ... 65%                                                                     │ ▒
+▒│ (Reading database ... 70%                                                                     │ ▒
+▒│ (Reading database ... 75%                                                                     │ ▒
+▒│ (Reading database ... 80%                                                                     │ ▒
+▒│ (Reading database ... 85%                                                                     │ ▒
+▒│ (Reading database ... 90%                                                                     │ ▒
+▒│ (Reading database ... 95%                                                                     │ ▒
+▒│ (Reading database ... 100%                                                                    │ ▒
+▒│ (Reading database ... 44753 files and directories currently installed.)                       │ ▒
+▒│
+ Preparing to unpack .../mariadb-common_1%3a10.11.13-0ubuntu0.24.04.1_all.deb ...              │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking mariadb-common (1:10.11.13-0ubuntu0.24.04.1) ...                                    │ ▒
+▒│                                                                                               │ ▒
+▒│ Selecting previously unselected package libmariadb3:amd64.                                    │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../libmariadb3_1%3a10.11.13-0ubuntu0.24.04.1_amd64.deb ...               │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking libmariadb3:amd64 (1:10.11.13-0ubuntu0.24.04.1) ...                                 │ ▒
+▒│                                                                                               │ ▒
+▒│ Selecting previously unselected package mariadb-client-core.                                  │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../mariadb-client-core_1%3a10.11.13-0ubuntu0.24.04.1_amd64.deb ...       │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking mariadb-client-core (1:10.11.13-0ubuntu0.24.04.1) ...                               │ ▒
+▒│                                                                                               │ ▒
+▒│ IPv6 Enabled for eth0                                                                         │ ▒
+▒│ IPv6 Enabled for hiddifywg                                                                    │ ▒
+▒│ ===run.sh other/redis                                                                         │ ▒
+▒│ }========================other/redis===================================                       │ ▒
+▒│ Selecting previously unselected package mariadb-client.                                       │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../mariadb-client_1%3a10.11.13-0ubuntu0.24.04.1_amd64.deb ...            │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking mariadb-client (1:10.11.13-0ubuntu0.24.04.1) ...                                    │ ▒
+▒│
+  * Reloading configuration files for periodic command scheduler cron                          │ ▒
+▒│    ...done.                                                                                   │ ▒
+▒│ Selecting previously unselected package mariadb-server-core.                                  │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../mariadb-server-core_1%3a10.11.13-0ubuntu0.24.04.1_amd64.deb ...       │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking mariadb-server-core (1:10.11.13-0ubuntu0.24.04.1) ...                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up mariadb-common (1:10.11.13-0ubuntu0.24.04.1) ...                                   │ ▒
+▒│                                                                                               │ ▒
+▒│ update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in au>│ ▒
+▒│                                                                                               │ ▒
+▒│ Selecting previously unselected package mariadb-server.                                       │ ▒
+▒│                                                                                               │ ▒
+▒│ (Reading database ...                                                                         │ ▒
+▒│ (Reading database ... 5%                                                                      │ ▒
+▒│ (Reading database ... 10%                                                                     │ ▒
+▒│ (Reading database ... 15%                                                                     │ ▒
+▒│ (Reading database ... 20%                                                                     │ ▒
+▒│ (Reading database ... 25%                                                                     │ ▒
+▒│ (Reading database ... 30%                                                                     │ ▒
+▒│ (Reading database ... 35%                                                                     │ ▒
+▒│ (Reading database ... 40%                                                                     │ ▒
+▒│ (Reading database ... 45%                                                                     │ ▒
+▒│ (Reading database ... 50%                                                                     │ ▒
+▒│ (Reading database ... 55%
+ (Reading database ... 60%                                                                     │ ▒
+▒│ (Reading database ... 65%                                                                     │ ▒
+▒│ (Reading database ... 70%                                                                     │ ▒
+▒│ (Reading database ... 75%                                                                     │ ▒
+▒│ (Reading database ... 80%                                                                     │ ▒
+▒│ (Reading database ... 85%                                                                     │ ▒
+▒│ (Reading database ... 90%                                                                     │ ▒
+▒│ (Reading database ... 95%                                                                     │ ▒
+▒│ (Reading database ... 100%                                                                    │ ▒
+▒│ (Reading database ... 44996 files and directories currently installed.)                       │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../mariadb-server_1%3a10.11.13-0ubuntu0.24.04.1_amd64.deb ...            │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking mariadb-server (1:10.11.13-0ubuntu0.24.04.1) ...                                    │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up libmariadb3:amd64 (1:10.11.13-0ubuntu0.24.04.1) ...                                │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up mariadb-server-core (1:10.11.13-0ubuntu0.24.04.1) ...                              │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up mariadb-client-core (1:10.11.13-0ubuntu0.24.04.1) ...                              │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up mariadb-client (1:10.11.13-0ubuntu0.24.04.1) ...                                   │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up mariadb-server (1:10.11.13-0ubuntu0.24.04.1) ...                                   │ ▒
+▒│                                                                                               │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/mariadb.service → /usr/lib/system>
+                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Processing triggers for man-db (2.12.0-4build2) ...                                           │ ▒
+▒│                                                                                               │ ▒
+▒│ Processing triggers for libc-bin (2.39-0ubuntu8.6) ...                                        │ ▒
+▒│                                                                                               │ ▒
+▒│ Generating a random password...                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB                         │ ▒
+▒│       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!                            │ ▒
+▒│                                                                                               │ ▒
+▒│ In order to log into MariaDB to secure it, we'll need the current                             │ ▒
+▒│ password for the root user. If you've just installed MariaDB, and                             │ ▒
+▒│ haven't set the root password yet, you should just press enter here.                          │ ▒
+▒│                                                                                               │ ▒
+▒│ stty: 'standard input': Inappropriate ioctl for device                                        │ ▒
+▒│ stty: 'standard input': Inappropriate ioctl for device                                        │ ▒
+▒│ Enter current password for root (enter for none):                                             │ ▒
+▒│ OK, successfully used password, moving on...                                                  │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting the root password or using the unix_socket ensures that nobody                        │ ▒
+▒│ can log into the MariaDB root user without the proper authorisation.                          │ ▒
+▒│                                                                                               │ ▒
+▒│ You already have your root account protected, so you can safely answer 'n'.                   │ ▒
+▒│                                                                                               │ ▒
+▒│ Switch to unix_socket authentication [Y/n] You already have your root account protected, so y>
+                                                                                              │ ▒
+▒│ Switch to unix_socket authentication [Y/n] You already have your root account protected, so y>│ ▒
+▒│                                                                                               │ ▒
+▒│ Switch to unix_socket authentication [Y/n] Enabled successfully!                              │ ▒
+▒│ Reloading privilege tables..                                                                  │ ▒
+▒│  ... Success!                                                                                 │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ You already have your root account protected, so you can safely answer 'n'.                   │ ▒
+▒│                                                                                               │ ▒
+▒│ stty: 'standard input': Inappropriate ioctl for device                                        │ ▒
+▒│ stty: 'standard input': Inappropriate ioctl for device                                        │ ▒
+▒│ Change the root password? [Y/n] New password:                                                 │ ▒
+▒│ Re-enter new password:                                                                        │ ▒
+▒│ Password updated successfully!                                                                │ ▒
+▒│ Reloading privilege tables..                                                                  │ ▒
+▒│  ... Success!                                                                                 │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ By default, a MariaDB installation has an anonymous user, allowing anyone                     │ ▒
+▒│ to log into MariaDB without having to have a user account created for                         │ ▒
+▒│ them.  This is intended only for testing, and to make the installation                        │ ▒
+▒│ go a bit smoother.  You should remove them before moving into a                               │ ▒
+▒│ production environment.                                                                       │ ▒
+▒│                                                                                               │ ▒
+▒│ Remove anonymous users? [Y/n]  ... Success!
+ Normally, root should only be allowed to connect from 'localhost'.  This                      │ ▒
+▒│ ensures that someone cannot guess at the root password from the network.                      │ ▒
+▒│                                                                                               │ ▒
+▒│ Disallow root login remotely? [Y/n]  ... Success!                                             │ ▒
+▒│                                                                                               │ ▒
+▒│ By default, MariaDB comes with a database named 'test' that anyone can                        │ ▒
+▒│ access.  This is also intended only for testing, and should be removed                        │ ▒
+▒│ before moving into a production environment.                                                  │ ▒
+▒│                                                                                               │ ▒
+▒│ Remove test database and access to it? [Y/n]  - Dropping test database...                     │ ▒
+▒│  ... Success!                                                                                 │ ▒
+▒│  - Removing privileges on test database...                                                    │ ▒
+▒│  ... Success!                                                                                 │ ▒
+▒│                                                                                               │ ▒
+▒│ Reloading the privilege tables will ensure that all changes made so far                       │ ▒
+▒│ will take effect immediately.                                                                 │ ▒
+▒│                                                                                               │ ▒
+▒│ Reload privilege tables now? [Y/n]  ... Success!                                              │ ▒
+▒│                                                                                               │ ▒
+▒│ Cleaning up...                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ All done!  If you've completed all of the above steps, your MariaDB                           │ ▒
+▒│ installation should now be secure.                                                            │ ▒
+▒│                                                                                               │ ▒
+▒│ Thanks for using MariaDB!                                                                     │ ▒
+▒│ MariaDB setup complete.
+ bind-address set to 127.0.0.1 in /etc/mysql/mariadb.conf.d/50-server.cnf                      │ ▒
+▒│ }========================other/mysql===================================                       │ ▒
+▒│ ======================hiddify-panel====================================={                     │ ▒
+▒│ ===install.sh hiddify-panel                                                                   │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-panel.service → /opt/hidd>│ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-panel-background-tasks.se>│ ▒
+▒│ NOTICE: installing hiddifypanel from bundled src/...                                          │ ▒
+▒│ Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313                            │ ▒
+▒│ Resolved 115 packages in 61ms                                                                 │ ▒
+▒│    Building hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src                      │ ▒
+▒│       Built hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src                      │ ▒
+▒│ Prepared 1 package in 1.75s                                                                   │ ▒
+▒│ Uninstalled 1 package in 13ms                                                                 │ ▒
+▒│ Installed 1 package in 53ms                                                                   │ ▒
+▒│  - hiddifypanel==11.0.13                                                                      │ ▒
+▒│  + hiddifypanel==11.0.20 (from file:///opt/hiddify-manager/hiddify-panel/src)                 │ ▒
+▒│ ===run.sh hiddify-panel                                                                       │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)                                                         │ ▒
+▒│            ~~~~~~~~~^^^^^^^^^^^^^^^^^
+   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>│ ▒
+▒│     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>│ ▒
+▒│     app: Flask | None = self.create_app()                                                     │ ▒
+▒│                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^                                                  │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(                                                              │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )                                                                                         │ ▒
+▒│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required                 │ ▒
+▒│ }========================hiddify-panel===================================                     │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)                                                         │ ▒
+▒│            ~~~~~~~~~^^^^^^^^^^^^^^^^^                                                         │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>│ ▒
+▒│     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>│ ▒
+▒│     app: Flask | None = self.create_app()
+                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^                                                  │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(                                                              │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^                                                              │ ▒
+▒│         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )                                                                                         │ ▒
+▒│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required                 │ ▒
+▒│ rm: cannot remove '/opt/hiddify-manager/ssl/*.crt': No such file or directory                 │ ▒
+▒│ rm: cannot remove '/opt/hiddify-manager/ssl/*.crt.key': No such file or directory             │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "/opt/hiddify-manager/common/jinja.py", line 15, in <module>                           │ ▒
+▒│     configs = json.load(f)                                                                    │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/__init__.py">│
+     return loads(fp.read(),                                                                   │ ▒
+▒│         cls=cls, object_hook=object_hook,                                                     │ ▒
+▒│         parse_float=parse_float, parse_int=parse_int,                                         │ ▒
+▒│         parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)             │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/__init__.py">│ ▒
+▒│     return _default_decoder.decode(s)                                                         │ ▒
+▒│            ~~~~~~~~~~~~~~~~~~~~~~~^^^                                                         │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>│ ▒
+▒│     obj, end = self.raw_decode(s, idx=_w(s, 0).end())                                         │ ▒
+▒│                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^                                         │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>│ ▒
+▒│     raise JSONDecodeError("Expecting value", s, err.value) from None                          │ ▒
+▒│ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)                       │ ▒
+▒│ Cleaning up deprecated components...                                                          │ ▒
+▒│ Deprecated components cleanup completed.                                                      │ ▒
+▒│ ======================nginx====================================={                             │ ▒
+▒│ ===install.sh nginx                                                                           │ ▒
+▒│ ======================haproxy====================================={                           │ ▒
+▒│ ===install.sh haproxy                                                                         │ ▒
+▒│ ======================other/telegram====================================={                    │ ▒
+▒│ ======================other/ssh====================================={                         │ ▒
+▒│ ===install.sh other/ssh                                                                       │ ▒
+▒│ Error: Key not found: telegram_enable                                                         │ ▒
+▒│ Error: Key not found: ssh_server_enable                                                       │ ▒
+▒│ Error: Key not found: speed_test                                                              │ ▒
+▒│ Error: Key not found: ssfaketls_enable
+ ======================other/speedtest====================================={                   │ ▒
+▒│ ===install.sh other/speedtest                                                                 │ ▒
+▒│ ======================other/ssfaketls====================================={                   │ ▒
+▒│ ===install.sh other/ssfaketls                                                                 │ ▒
+▒│ haproxy 3.2 is already installed                                                              │ ▒
+▒│ Downloading package ssh-liberty-bridge version 1.3.0 for amd64... current version is          │ ▒
+▒│ Downloading package wgcf version 2.2.29 for amd64... current version is                       │ ▒
+▒│ }========================other/telegram===================================                    │ ▒
+▒│ Package ssh-liberty-bridge version 1.3.0 downloaded successfully to ssh-liberty-bridge.       │ ▒
+▒│ useradd: user 'liberty-bridge' already exists                                                 │ ▒
+▒│ Set installed version of ssh-liberty-bridge to 1.3.0.                                         │ ▒
+▒│ Package wgcf version 2.2.29 downloaded successfully to wgcf.                                  │ ▒
+▒│ chown: cannot access '.env*': No such file or directory                                       │ ▒
+▒│ Set installed version of wgcf to 2.2.29.                                                      │ ▒
+▒│ Error: Key not found: warp_mode                                                               │ ▒
+▒│ ======================other/warp====================================={                        │ ▒
+▒│ ===install.sh other/warp                                                                      │ ▒
+▒│ ======================xray====================================={                              │ ▒
+▒│ ===install.sh xray                                                                            │ ▒
+▒│ ======================singbox====================================={                           │ ▒
+▒│ ===install.sh singbox                                                                         │ ▒
+▒│ Error: Key not found: wireguard_enable                                                        │ ▒
+▒│ ======================other/wireguard====================================={                   │ ▒
+▒│ Error: Key not found: hiddifycli_enable                                                       │ ▒
+▒│ ======================other/hiddify-cli====================================={                 │ ▒
+▒│ Downloading package xray version 25.12.8 for amd64... current version is
+ Downloading package singbox version 1.8.8.h4 for amd64... current version is                  │ ▒
+▒│ }========================other/speedtest===================================                   │ ▒
+▒│ ===run.sh other/ssfaketls                                                                     │ ▒
+▒│ Package xray version 25.12.8 downloaded successfully to sb.zip.                               │ ▒
+▒│ Package singbox version 1.8.8.h4 downloaded successfully to sb.zip.                           │ ▒
+▒│ ===run.sh other/ssh                                                                           │ ▒
+▒│ run.sh: line 1: ../common/utils.sh: No such file or directory                                 │ ▒
+▒│ ERROR: Failed to copy singbox binary                                                          │ ▒
+▒│ }========================other/wireguard===================================                   │ ▒
+▒│ }========================other/hiddify-cli===================================                 │ ▒
+▒│ ===run.sh other/warp                                                                          │ ▒
+▒│ Failed to enable unit: Unit file hiddify-ss-faketls.service does not exist.                   │ ▒
+▒│ bash: run.sh: No such file or directory                                                       │ ▒
+▒│ }========================other/warp===================================                        │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-ssh-liberty-bridge.servic>│ ▒
+▒│ ===run.sh singbox                                                                             │ ▒
+▒│ Failed to restart hiddify-ss-faketls.service: Unit hiddify-ss-faketls.service not found.      │ ▒
+▒│ }========================other/ssfaketls===================================                   │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-singbox.service → /opt/hi>│ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/singbox/configs/01_api.json                       │ ▒
+▒│ chmod: cannot access '/opt/hiddify-manager/singbox/configs/01_api.json': No such file or dire>│ ▒
+▒│ chown: cannot access '/opt/hiddify-manager/singbox/configs/01_api.json': No such file or dire>│ ▒
+▒│ Setting permissions on /opt/hiddify-manager/singbox/configs
+Setting permissions on /opt/hiddify-manager/singbox                                           │ ▒
+▒│ ignoring singbox test                                                                         │ ▒
+▒│ }========================other/ssh===================================                         │ ▒
+▒│ hiddify-singbox.service is not active, cannot reload.                                         │ ▒
+▒│ }========================singbox===================================                           │ ▒
+▒│ Set installed version of xray to 25.12.8.                                                     │ ▒
+▒│ Downloading enhanced geo files for adblock...                                                 │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-haproxy.service → /opt/hi>│ ▒
+▒│ nginx version 1.26.* is not installed.                                                        │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ ===run.sh haproxy                                                                             │ ▒
+▒│ Job for hiddify-haproxy.service failed because the control process exited with error code.    │ ▒
+▒│ See "systemctl status hiddify-haproxy.service" and "journalctl -xeu hiddify-haproxy.service" >│ ▒
+▒│ }========================haproxy===================================                           │ ▒
+▒│ ======================acme.sh====================================={                           │ ▒
+▒│ ===install.sh acme.sh                                                                         │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...
+ Reading state information...                                                                  │ ▒
+▒│   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current               │ ▒
+▒│                                  Dload  Upload   Total   Spent    Left  Speed                 │ ▒
+▒│                                                                                               │ ▒
+▒│   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0                │ ▒
+▒│  14  226k   14 32750    0     0   428k      0 --:--:-- --:--:-- --:--:--  426k                │ ▒
+▒│ 100  226k  100  226k    0     0  2287k      0 --:--:-- --:--:-- --:--:-- 2269k                │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Installing from online archive.                              │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Downloading https://github.com/acmesh-official/acme.sh/archi>│ ▒
+▒│ 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.                                │ ▒
+▒│ ===run.sh xray                                                                                │ ▒
+▒│ Ignoring xray test                                                                            │ ▒
+▒│ }========================xray===================================                              │ ▒
+▒│ Hit:1 http://nginx.org/packages/mainline/ubuntu noble InRelease                               │ ▒
+▒│ Hit:2 https://mirror.hetzner.com/ubuntu/packages noble InRelease                              │ ▒
+▒│ Hit:3 https://mirror.hetzner.com/ubuntu/packages noble-updates InRelease                      │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Extracting master.tar.gz                                     │ ▒
+▒│ Hit:4 https://mirror.hetzner.com/ubuntu/packages noble-backports InRelease                    │ ▒
+▒│ Hit:5 https://mirror.hetzner.com/ubuntu/security noble-security InRelease                     │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Installing to /opt/hiddify-manager/acme.sh/lib               │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Installed to /opt/hiddify-manager/acme.sh/lib/acme.sh        │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Installing alias to '/root/.bashrc'                          │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] Close and reopen your terminal to start using acme.sh        │ ▒
+▒│ [Sun Jan  4 14:58:53 +0330 2026] bash has been found. Changing the shebang to use bash as pre>│ ▒
+▒│ Hit:6 https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu noble InRelease             │ ▒
+▒│ Ign:7 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble InRelease
+ Err:8 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release                        │ ▒
+▒│   404  Not Found [IP: 2600:1f1c:2e5:6901:29c4:f22:250b:e71 443]                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ [Sun Jan  4 14:58:55 +0330 2026] OK                                                           │ ▒
+▒│ [Sun Jan  4 14:58:55 +0330 2026] Install success!                                             │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...[Sun Jan  4 14:58:55 +0330 2026] Removing cron job                 │ ▒
+▒│ no crontab for root                                                                           │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...[Sun Jan  4 14:58:56 +0330 2026] Account key creation OK.          │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│
+ [Sun Jan  4 14:58:56 +0330 2026] No EAB credentials found for ZeroSSL, let's obtain them      │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ NOTICE: nginx 1.26 not available, installing latest...                                        │ ▒
+▒│ nginx version  is not installed.                                                              │ ▒
+▒│                                                                                               │ ▒
+▒│ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.               │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ The following NEW packages will be installed:                                                 │ ▒
+▒│   nginx                                                                                       │ ▒
+▒│ 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.                                │ ▒
+▒│ [Sun Jan  4 14:58:57 +0330 2026] Registering account: https://acme.zerossl.com/v2/DV90        │ ▒
+▒│ Need to get 1182 kB of archives.                                                              │ ▒
+▒│ After this operation, 3829 kB of additional disk space will be used.                          │ ▒
+▒│ Get:1 http://nginx.org/packages/mainline/ubuntu noble/nginx amd64 nginx amd64 1.29.4-1~noble >│ ▒
+▒│ Fetched 1182 kB in 0s (5609 kB/s)
+ Selecting previously unselected package nginx.                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ (Reading database ...                                                                         │ ▒
+▒│ (Reading database ... 5%                                                                      │ ▒
+▒│ (Reading database ... 10%                                                                     │ ▒
+▒│ (Reading database ... 15%                                                                     │ ▒
+▒│ (Reading database ... 20%                                                                     │ ▒
+▒│ (Reading database ... 25%                                                                     │ ▒
+▒│ (Reading database ... 30%                                                                     │ ▒
+▒│ (Reading database ... 35%                                                                     │ ▒
+▒│ (Reading database ... 40%                                                                     │ ▒
+▒│ (Reading database ... 45%                                                                     │ ▒
+▒│ (Reading database ... 50%                                                                     │ ▒
+▒│ (Reading database ... 55%                                                                     │ ▒
+▒│ (Reading database ... 60%                                                                     │ ▒
+▒│ (Reading database ... 65%                                                                     │ ▒
+▒│ (Reading database ... 70%                                                                     │ ▒
+▒│ (Reading database ... 75%                                                                     │ ▒
+▒│ (Reading database ... 80%                                                                     │ ▒
+▒│ (Reading database ... 85%                                                                     │ ▒
+▒│ (Reading database ... 90%                                                                     │ ▒
+▒│ (Reading database ... 95%                                                                     │ ▒
+▒│ (Reading database ... 100%                                                                    │ ▒
+▒│ (Reading database ... 45114 files and directories currently installed.)                       │ ▒
+▒│                                                                                               │ ▒
+▒│ Preparing to unpack .../nginx_1.29.4-1~noble_amd64.deb ...
+ ----------------------------------------------------------------------                        │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Thanks for using nginx!                                                                       │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Please find the official documentation for nginx here:                                        │ ▒
+▒│                                                                                               │ ▒
+▒│ * https://nginx.org/en/docs/                                                                  │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Please subscribe to nginx-announce mailing list to get                                        │ ▒
+▒│                                                                                               │ ▒
+▒│ the most important news about nginx:                                                          │ ▒
+▒│                                                                                               │ ▒
+▒│ * https://nginx.org/en/support.html                                                           │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ Commercial subscriptions for nginx are available on:                                          │ ▒
+▒│                                                                                               │ ▒
+▒│ * https://nginx.com/products/                                                                 │ ▒
+▒│
+ ----------------------------------------------------------------------                        │ ▒
+▒│                                                                                               │ ▒
+▒│ Unpacking nginx (1.29.4-1~noble) ...                                                          │ ▒
+▒│                                                                                               │ ▒
+▒│ Setting up nginx (1.29.4-1~noble) ...                                                         │ ▒
+▒│                                                                                               │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/>│ ▒
+▒│                                                                                               │ ▒
+▒│                                                                                               │ ▒
+▒│ [Sun Jan  4 14:58:58 +0330 2026] Registered                                                   │ ▒
+▒│ Processing triggers for man-db (2.12.0-4build2) ...                                           │ ▒
+▒│                                                                                               │ ▒
+▒│ [Sun Jan  4 14:58:58 +0330 2026] ACCOUNT_THUMBPRINT='8ViR26OxmotGqUZAFlPJGgcBXhDA4QrF9HcZuBXi>│ ▒
+▒│ Job for hiddify-haproxy.service failed because the control process exited with error code.    │ ▒
+▒│ See "systemctl status hiddify-haproxy.service" and "journalctl -xeu hiddify-haproxy.service" >│ ▒
+▒│ ===run.sh acme.sh                                                                             │ ▒
+▒│ Certificate cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt) file not found. Genera>│ ▒
+▒│ Private key file cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt.key) not found. Ge>│ ▒
+▒│ .+..........+...+...+.....+.......+...+..+.............+..+....+......+..++++++++++++++++++++>│ ▒
+▒│ ...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+........+.......+++>│ ▒
+▒│ -----                                                                                         │ ▒
+▒│ New certificate and private key generated.                                                    │ ▒
+▒│ hiddify-haproxy.service is not active, cannot reload.                                         │ ▒
+▒│ hiddify-singbox.service is not active, cannot reload.                                         │ ▒
+▒│ }========================acme.sh===================================                           │ ▒
+▒│ Created symlink /etc/systemd/system/multi-user.target.wants/hiddify-nginx.service → /opt/hidd>│
+ ===run.sh nginx                                                                               │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx/parts/short-link.conf                       │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx/parts                                       │ ▒
+▒│ chmod: cannot access '/opt/hiddify-manager/nginx/parts/short-link.conf': No such file or dire>│ ▒
+▒│ chown: cannot access '/opt/hiddify-manager/nginx/parts/short-link.conf': No such file or dire>│ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx                                             │ ▒
+▒│ chmod: cannot access 'parts/short-link.conf': No such file or directory                       │ ▒
+▒│ Job for hiddify-nginx.service failed because the control process exited with error code.      │ ▒
+▒│ See "systemctl status hiddify-nginx.service" and "journalctl -xeu hiddify-nginx.service" for >│ ▒
+▒│ Job for hiddify-nginx.service failed because the control process exited with error code.      │ ▒
+▒│ See "systemctl status hiddify-nginx.service" and "journalctl -xeu hiddify-nginx.service" for >│ ▒
+▒│ }========================nginx===================================                             │ ▒
+▒│ ---------------------Finished!------------------------                                        │ ▒
+▒│ ===install.sh common                                                                          │ ▒
+▒│ ======================other/redis====================================={                       │ ▒
+▒│ ===install.sh other/redis                                                                     │ ▒
+▒│ ======================other/mysql====================================={                       │ ▒
+▒│ ===install.sh other/mysql                                                                     │ ▒
+▒│ }========================other/mysql===================================                       │ ▒
+▒│ ===run.sh other/redis                                                                         │ ▒
+▒│ }========================other/redis===================================                       │ ▒
+▒│ Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313                            │ ▒
+▒│ net.ipv6.conf.all.disable_ipv6 = 0
+ net.ipv6.conf.default.disable_ipv6 = 0                                                        │ ▒
+▒│ net.ipv6.conf.lo.disable_ipv6 = 0                                                             │ ▒
+▒│ IPv6 Enabled for eth0                                                                         │ ▒
+▒│ IPv6 Enabled for hiddifywg                                                                    │ ▒
+▒│  * Reloading configuration files for periodic command scheduler cron                          │ ▒
+▒│    ...done.                                                                                   │ ▒
+▒│ ======================hiddify-panel====================================={                     │ ▒
+▒│ ===install.sh hiddify-panel                                                                   │ ▒
+▒│ NOTICE: installing hiddifypanel from bundled src/...                                          │ ▒
+▒│ Using Python 3.13.11 environment at: /opt/hiddify-manager/.venv313                            │ ▒
+▒│ Resolved 115 packages in 61ms                                                                 │ ▒
+▒│    Building hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src                      │ ▒
+▒│       Built hiddifypanel @ file:///opt/hiddify-manager/hiddify-panel/src                      │ ▒
+▒│ Prepared 1 package in 1.65s                                                                   │ ▒
+▒│ Uninstalled 1 package in 13ms                                                                 │ ▒
+▒│ Installed 1 package in 37ms                                                                   │ ▒
+▒│  ~ hiddifypanel==11.0.20 (from file:///opt/hiddify-manager/hiddify-panel/src)                 │ ▒
+▒│ ===run.sh hiddify-panel                                                                       │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^                                                         │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>│ ▒
+▒│     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>│ ▒
+▒│     app: Flask | None = self.create_app()                                                     │ ▒
+▒│                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^                                                  │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^                                                              │ ▒
+▒│         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )                                                                                         │ ▒
+▒│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required                 │ ▒
+▒│ }========================hiddify-panel===================================                     │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)                                                         │ ▒
+▒│            ~~~~~~~~~^^^^^^^^^^^^^^^^^                                                         │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>│ ▒
+▒│     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>
+     app: Flask | None = self.create_app()                                                     │ ▒
+▒│                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^                                                  │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(                                                              │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^                                                              │ ▒
+▒│         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )                                                                                         │ ▒
+▒│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required                 │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "/opt/hiddify-manager/common/jinja.py", line 15, in <module>                           │ ▒
+▒│     configs = json.load(f)                                                                    │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/__init__.py">│ ▒
+▒│     return loads(fp.read(),
+         cls=cls, object_hook=object_hook,                                                     │ ▒
+▒│         parse_float=parse_float, parse_int=parse_int,                                         │ ▒
+▒│         parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)             │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/__init__.py">│ ▒
+▒│     return _default_decoder.decode(s)                                                         │ ▒
+▒│            ~~~~~~~~~~~~~~~~~~~~~~~^^^                                                         │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>│ ▒
+▒│     obj, end = self.raw_decode(s, idx=_w(s, 0).end())                                         │ ▒
+▒│                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^                                         │ ▒
+▒│   File "/usr/local/share/uv/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/json/decoder.py",>│ ▒
+▒│     raise JSONDecodeError("Expecting value", s, err.value) from None                          │ ▒
+▒│ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)                       │ ▒
+▒│ Cleaning up deprecated components...                                                          │ ▒
+▒│ Deprecated components cleanup completed.                                                      │ ▒
+▒│ ======================nginx====================================={                             │ ▒
+▒│ ===install.sh nginx                                                                           │ ▒
+▒│ ======================haproxy====================================={                           │ ▒
+▒│ ===install.sh haproxy                                                                         │ ▒
+▒│ ======================other/speedtest====================================={                   │ ▒
+▒│ ===install.sh other/speedtest                                                                 │ ▒
+▒│ Error: Key not found: speed_test                                                              │ ▒
+▒│ Error: Key not found: telegram_enable                                                         │ ▒
+▒│ ======================other/telegram====================================={                    │ ▒
+▒│ ======================other/ssh====================================={                         │ ▒
+▒│ ===install.sh other/ssh                                                                       │ ▒
+▒│ Error: Key not found: ssh_server_enable
+ Error: Key not found: ssfaketls_enable                                                        │ ▒
+▒│ ======================other/ssfaketls====================================={                   │ ▒
+▒│ ===install.sh other/ssfaketls                                                                 │ ▒
+▒│ haproxy 3.2 is already installed                                                              │ ▒
+▒│ Error: Key not found: warp_mode                                                               │ ▒
+▒│ ======================singbox====================================={                           │ ▒
+▒│ ===install.sh singbox                                                                         │ ▒
+▒│ ======================other/warp====================================={                        │ ▒
+▒│ ===install.sh other/warp                                                                      │ ▒
+▒│ ======================xray====================================={                              │ ▒
+▒│ ===install.sh xray                                                                            │ ▒
+▒│ Error: Key not found: wireguard_enable                                                        │ ▒
+▒│ ======================other/wireguard====================================={                   │ ▒
+▒│ Error: Key not found: hiddifycli_enable                                                       │ ▒
+▒│ ======================other/hiddify-cli====================================={                 │ ▒
+▒│ Downloading package singbox version 1.8.8.h4 for amd64... current version is                  │ ▒
+▒│ }========================other/telegram===================================                    │ ▒
+▒│ Package singbox version 1.8.8.h4 downloaded successfully to sb.zip.                           │ ▒
+▒│ ===run.sh other/ssh                                                                           │ ▒
+▒│ run.sh: line 1: ../common/utils.sh: No such file or directory                                 │ ▒
+▒│ }========================other/wireguard===================================                   │ ▒
+▒│ ERROR: Failed to copy singbox binary                                                          │ ▒
+▒│ Downloading enhanced geo files for adblock...                                                 │ ▒
+▒│ }========================other/hiddify-cli===================================                 │ ▒
+▒│ ===run.sh other/warp                                                                          │ ▒
+▒│ bash: run.sh: No such file or directory
+ }========================other/warp===================================                        │ ▒
+▒│ }========================other/speedtest===================================                   │ ▒
+▒│ ===run.sh other/ssfaketls                                                                     │ ▒
+▒│ ===run.sh singbox                                                                             │ ▒
+▒│ ===run.sh xray                                                                                │ ▒
+▒│ Failed to enable unit: Unit file hiddify-ss-faketls.service does not exist.                   │ ▒
+▒│ Failed to restart hiddify-ss-faketls.service: Unit hiddify-ss-faketls.service not found.      │ ▒
+▒│ }========================other/ssfaketls===================================                   │ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ find: ‘configs/01_api.json’: No such file or directory                                        │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/singbox/configs/01_api.json                       │ ▒
+▒│ chmod: cannot access '/opt/hiddify-manager/singbox/configs/01_api.json': No such file or dire>│ ▒
+▒│ chown: cannot access '/opt/hiddify-manager/singbox/configs/01_api.json': No such file or dire>│ ▒
+▒│ Setting permissions on /opt/hiddify-manager/singbox/configs                                   │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/singbox                                           │ ▒
+▒│ ignoring singbox test                                                                         │ ▒
+▒│ Ignoring xray test                                                                            │ ▒
+▒│ hiddify-singbox.service is not active, cannot reload.                                         │ ▒
+▒│ }========================other/ssh===================================                         │ ▒
+▒│ }========================singbox===================================                           │ ▒
+▒│ ===run.sh haproxy                                                                             │ ▒
+▒│ Job for hiddify-haproxy.service failed because the control process exited with error code.    │ ▒
+▒│ See "systemctl status hiddify-haproxy.service" and "journalctl -xeu hiddify-haproxy.service" >│ ▒
+▒│ nginx version 1.26.* is not installed.                                                        │ ▒
+▒│ }========================haproxy===================================
+ ======================acme.sh====================================={                           │ ▒
+▒│ ===install.sh acme.sh                                                                         │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...[Sun Jan  4 14:59:17 +0330 2026] Removing cron job                 │ ▒
+▒│ no crontab for root                                                                           │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ [Sun Jan  4 14:59:18 +0330 2026] Registering account: https://acme.zerossl.com/v2/DV90        │ ▒
+▒│ 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.                                │ ▒
+▒│ Hit:1 http://nginx.org/packages/mainline/ubuntu noble InRelease                               │ ▒
+▒│ Hit:2 https://mirror.hetzner.com/ubuntu/packages noble InRelease                              │ ▒
+▒│ Hit:3 https://mirror.hetzner.com/ubuntu/packages noble-updates InRelease                      │ ▒
+▒│ Hit:4 https://mirror.hetzner.com/ubuntu/packages noble-backports InRelease                    │ ▒
+▒│ Hit:5 https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu noble InRelease             │ ▒
+▒│ Hit:6 https://mirror.hetzner.com/ubuntu/security noble-security InRelease                     │ ▒
+▒│ Ign:7 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble InRelease                      │ ▒
+▒│ Err:8 https://packagecloud.io/ookla/speedtest-cli/ubuntu noble Release
+   404  Not Found [IP: 2600:1f1c:2e5:6900:8eb9:6d4c:b70:5a65 443]                              │ ▒
+▒│ [Sun Jan  4 14:59:19 +0330 2026] Already registered                                           │ ▒
+▒│ [Sun Jan  4 14:59:19 +0330 2026] ACCOUNT_THUMBPRINT='8ViR26OxmotGqUZAFlPJGgcBXhDA4QrF9HcZuBXi>│ ▒
+▒│ hiddify-haproxy.service is not active, cannot reload.                                         │ ▒
+▒│ Reading package lists...===run.sh acme.sh                                                     │ ▒
+▒│ Job for hiddify-xray.service failed because the control process exited with error code.       │ ▒
+▒│ See "systemctl status hiddify-xray.service" and "journalctl -xeu hiddify-xray.service" for de>│ ▒
+▒│ }========================xray===================================                              │ ▒
+▒│ Certificate cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt) file not found. Genera>│ ▒
+▒│ Private key file cert_utils.sh (/opt/hiddify-manager/ssl/cert_utils.sh.crt.key) not found. Ge>│ ▒
+▒│ .+...+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+......+..+.....>│ ▒
+▒│ .............+......+.+.....+....+..+..........+...+......+++++++++++++++++++++++++++++++++++>│ ▒
+▒│ -----                                                                                         │ ▒
+▒│ New certificate and private key generated.                                                    │ ▒
+▒│ hiddify-haproxy.service is not active, cannot reload.                                         │ ▒
+▒│ hiddify-singbox.service is not active, cannot reload.                                         │ ▒
+▒│ }========================acme.sh===================================                           │ ▒
+▒│                                                                                               │ ▒
+▒│ Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common
+Reading package lists...                                                                      │ ▒
+▒│ Building dependency tree...                                                                   │ ▒
+▒│ Reading state information...                                                                  │ ▒
+▒│ Package nginx is not available, but is referred to by another package.                        │ ▒
+▒│ This may mean that the package is missing, has been obsoleted, or                             │ ▒
+▒│ is only available from another source                                                         │ ▒
+▒│ However the following packages replace it:                                                    │ ▒
+▒│   nginx-common                                                                                │ ▒
+▒│                                                                                               │ ▒
+▒│ NOTICE: nginx 1.26 not available, installing latest...                                        │ ▒
+▒│ ===run.sh nginx                                                                               │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ find: ‘parts/short-link.conf’: No such file or directory                                      │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx/parts/short-link.conf                       │ ▒
+▒│ chmod: cannot access '/opt/hiddify-manager/nginx/parts/short-link.conf': No such file or dire>│ ▒
+▒│ chown: cannot access '/opt/hiddify-manager/nginx/parts/short-link.conf': No such file or dire>│ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx/parts                                       │ ▒
+▒│ Setting permissions on /opt/hiddify-manager/nginx                                             │ ▒
+▒│ chmod: cannot access 'parts/short-link.conf': No such file or directory                       │ ▒
+▒│ Job for hiddify-nginx.service failed because the control process exited with error code.      │ ▒
+▒│ See "systemctl status hiddify-nginx.service" and "journalctl -xeu hiddify-nginx.service" for >│ ▒
+▒│ Job for hiddify-nginx.service failed because the control process exited with error code.      │ ▒
+▒│ See "systemctl status hiddify-nginx.service" and "journalctl -xeu hiddify-nginx.service" for >│ ▒
+▒│ }========================nginx===================================                             │ ▒
+▒│ ---------------------Finished!------------------------
+ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)                                                         │ ▒
+▒│            ~~~~~~~~~^^^^^^^^^^^^^^^^^                                                         │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>│ ▒
+▒│     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>│ ▒
+▒│     app: Flask | None = self.create_app()                                                     │ ▒
+▒│                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(                                                              │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^                                                              │ ▒
+▒│         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )                                                                                         │ ▒
+▒│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required                 │ ▒
+▒│ Traceback (most recent call last):                                                            │ ▒
+▒│   File "<frozen runpy>", line 198, in _run_module_as_main                                     │ ▒
+▒│   File "<frozen runpy>", line 88, in _run_code                                                │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/__main__.py",>│ ▒
+▒│     main()                                                                                    │ ▒
+▒│     ~~~~^^                                                                                    │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1157,>│ ▒
+▒│     return self.main(*args, **kwargs)                                                         │ ▒
+▒│            ~~~~~~~~~^^^^^^^^^^^^^^^^^                                                         │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1078,>│ ▒
+▒│     rv = self.invoke(ctx)                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1682,>
+     cmd_name, cmd, args = self.resolve_command(ctx, args)                                     │ ▒
+▒│                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/click/core.py", line 1729,>│ ▒
+▒│     cmd = self.get_command(ctx, cmd_name)                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 611, i>│ ▒
+▒│     app = info.load_app()                                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask/cli.py", line 328, i>│ ▒
+▒│     app: Flask | None = self.create_app()                                                     │ ▒
+▒│                         ~~~~~~~~~~~~~~~^^                                                     │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app = create_app(app_mode="cli" if cli else "web")                                        │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/base.py", lin>│ ▒
+▒│     app.config.load_extensions("EXTENSIONS")                                                  │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^                                                  │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dyn>│ ▒
+▒│     initializer(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/hiddifypanel/database.py",>│ ▒
+▒│     db.init_app(app)                                                                          │ ▒
+▒│     ~~~~~~~~~~~^^^^^                                                                          │ ▒
+▒│   File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension>│ ▒
+▒│     basic_engine_options.update(                                                              │ ▒
+▒│     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^                                                              │ ▒
+▒│         app.config.setdefault("SQLALCHEMY_ENGINE_OPTIONS", {})                                │ ▒
+▒│         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                │ ▒
+▒│     )
+│     ^                                                                                         │ ▒
+▒│ ValueError: dictionary update sequence element #0 has length 1; 2 is required

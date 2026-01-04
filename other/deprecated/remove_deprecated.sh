@@ -4,6 +4,10 @@
 
 echo "Cleaning up deprecated components..."
 
+# Remove ookla speedtest repo (causes 404 errors on Ubuntu 24.04)
+rm -f /etc/apt/sources.list.d/ookla_speedtest-cli.list 2>/dev/null
+rm -f /etc/apt/sources.list.d/speedtest*.list 2>/dev/null
+
 # ShadowTLS
 systemctl stop --now shadowtls >/dev/null 2>&1
 systemctl disable shadowtls >/dev/null 2>&1

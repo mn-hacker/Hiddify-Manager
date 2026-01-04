@@ -488,21 +488,26 @@ function remove_lock() {
 
 function hconfig() {
     local json_file="/opt/hiddify-manager/current.json"
-    [ ! -f "$json_file" ] && { error "panel config file not found"; return 1; }
-
     local key=$1
-    local essential_vars=$(jq -r '.chconfigs["0"] | to_entries[] | .key' "$json_file")
-    for var in $essential_vars; do
-        if [ "$key" == "$var" ]; then
-            local value=$(jq -r --arg var "$var" '.chconfigs["0"][$var]' "$json_file")
-            echo "$value"
-            return 0  # Exit the function with success status
-        fi
-    done
-
-    # If the key is not found, return an error status
-    error "Error: Key not found: $key"
-    return 1
+    local default_value=${2:-""}
+    
+    # If file doesn't exist or is empty, return default silently
+    if [ ! -f "$json_file" ] || [ ! -s "$json_file" ]; then
+        echo "$default_value"
+        return 0
+    fi
+    
+    # Try to get the value
+    local value=$(jq -r --arg var "$key" '.chconfigs["0"][$var] // empty' "$json_file" 2>/dev/null)
+    
+    if [ -n "$value" ] && [ "$value" != "null" ]; then
+        echo "$value"
+        return 0
+    fi
+    
+    # Return default value if not found
+    echo "$default_value"
+    return 0
 }
 #TODO: check functionality when not using the venv
 function hiddify-panel-run() {

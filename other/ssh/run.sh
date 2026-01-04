@@ -1,4 +1,4 @@
-source ../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 
 ln -sf $(pwd)/hiddify-ssh-liberty-bridge.service /etc/systemd/system/hiddify-ssh-liberty-bridge.service
 

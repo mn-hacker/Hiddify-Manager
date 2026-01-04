@@ -1,6 +1,6 @@
 #!/bin/bash
 cd $(dirname -- "$0")
-source ../../common/utils.sh
+source /opt/hiddify-manager/common/utils.sh
 
 install_package mariadb-server
 
@@ -9,32 +9,38 @@ if [ ! -f "mysql_pass" ]; then
     random_password=$(< /dev/urandom tr -dc 'a-zA-Z0-9' | head -c49; echo)
     echo "$random_password" >"mysql_pass"
     chmod 600 "mysql_pass"
-    # Secure MariaDB installation
-    sudo mysql_secure_installation <<EOF
-y
-$random_password
-$random_password
-y
-y
-y
-y
-EOF
+    
+    # Wait for MariaDB to start
+    systemctl start mariadb 2>/dev/null || true
+    sleep 2
+    
+    # Secure MariaDB installation using direct MySQL commands (avoids stty errors)
+    sudo mysql -u root -f <<MYSQL_SCRIPT 2>/dev/null
+-- Set root password
+ALTER USER 'root'@'localhost' IDENTIFIED BY '$random_password';
 
-    # Disable external access
-    sudo sed -i 's/bind-address/#bind-address/' /etc/mysql/mariadb.conf.d/50-server.cnf
-    sudo systemctl restart mariadb
+-- Remove anonymous users
+DELETE FROM mysql.user WHERE User='';
 
-    # Create user with localhost access
-    sudo mysql -u root -f <<MYSQL_SCRIPT
-CREATE USER 'hiddifypanel'@'localhost' IDENTIFIED BY '$random_password';
-ALTER USER 'hiddifypanel'@'localhost' IDENTIFIED BY '$random_password';
+-- Remove remote root login
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 
-GRANT ALL PRIVILEGES ON *.* TO 'hiddifypanel'@'localhost';
-CREATE DATABASE hiddifypanel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;;
+-- Remove test database
+DROP DATABASE IF EXISTS test;
+DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+
+-- Create hiddifypanel user and database
+CREATE DATABASE IF NOT EXISTS hiddifypanel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'hiddifypanel'@'localhost' IDENTIFIED BY '$random_password';
 GRANT ALL PRIVILEGES ON hiddifypanel.* TO 'hiddifypanel'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'hiddifypanel'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
     
+    # Disable external access
+    sudo sed -i 's/bind-address/#bind-address/' /etc/mysql/mariadb.conf.d/50-server.cnf 2>/dev/null || true
+    sudo systemctl restart mariadb
+
     echo "MariaDB setup complete."
     
 fi

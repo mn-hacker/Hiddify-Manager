@@ -6,16 +6,18 @@ domains=$(cat ../current.json | jq -r '.domains[] | .domain' | tr '\n' ' ')
 
 
 # Loop over the .crt files
+shopt -s nullglob  # Prevent errors when no files match
 for f in /opt/hiddify-manager/ssl/*.crt; do
     # Get the basename without the .crt extension
     d=$(basename "$f" .crt)
     # Check if $d is not in the list of domains
     if [[ ! " ${domains[@]} " =~ " ${d} " ]]; then
         # If $d is not in domains, remove the file
-        rm "/opt/hiddify-manager/ssl/$d.crt"
-        rm "/opt/hiddify-manager/ssl/$d.crt.key"
+        rm -f "/opt/hiddify-manager/ssl/$d.crt" 2>/dev/null || true
+        rm -f "/opt/hiddify-manager/ssl/$d.crt.key" 2>/dev/null || true
     fi
 done
+shopt -u nullglob
 
 # we need at least one ssl certificate to be able to run haproxy
 for d in $domains; do
