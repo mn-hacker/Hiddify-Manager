@@ -93,19 +93,28 @@ function get_cert() {
     echo "=========================================="
 
     # Check if we already have a valid certificate (not expiring within 30 days)
+    # Skip self-signed certs (they have very long validity or issuer == subject)
     if [ -f "$ssl_cert_path/$DOMAIN.crt" ] && [ -f "$ssl_cert_path/$DOMAIN.crt.key" ]; then
+        local issuer=$(openssl x509 -issuer -noout -in "$ssl_cert_path/$DOMAIN.crt" 2>/dev/null | sed 's/issuer=//')
+        local subject=$(openssl x509 -subject -noout -in "$ssl_cert_path/$DOMAIN.crt" 2>/dev/null | sed 's/subject=//')
         local expire_date=$(openssl x509 -enddate -noout -in "$ssl_cert_path/$DOMAIN.crt" 2>/dev/null | cut -d= -f2-)
-        if [ -n "$expire_date" ]; then
+        
+        if [ -n "$expire_date" ] && [ "$issuer" != "$subject" ]; then
             local expire_epoch=$(date -d "$expire_date" +%s 2>/dev/null)
             local now_epoch=$(date +%s)
             local days_left=$(( (expire_epoch - now_epoch) / 86400 ))
             
-            if [ "$days_left" -gt 30 ]; then
+            # Skip only if cert is from a real CA (validity < 400 days) and still valid
+            if [ "$days_left" -gt 30 ] && [ "$days_left" -lt 400 ]; then
                 echo "✓ Existing certificate is valid for $days_left more days, skipping renewal."
                 return 0
-            else
+            elif [ "$days_left" -le 30 ]; then
                 echo "Certificate expires in $days_left days, attempting renewal..."
+            else
+                echo "Certificate has unusually long validity ($days_left days), likely self-signed. Getting new cert..."
             fi
+        else
+            echo "Existing certificate is self-signed or invalid, getting new cert..."
         fi
     fi
 
