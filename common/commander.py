@@ -26,6 +26,7 @@ class Command(StrEnum):
     apply_users = os.path.join(HIDDIFY_DIR, 'install.sh')
     install_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/install_rathole.sh')
     uninstall_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/uninstall_rathole.sh')
+    create_tunnel = os.path.join(HIDDIFY_DIR, 'other/rathole/create_tunnel.sh')
     id = 'id'
 
 
@@ -172,6 +173,27 @@ def install_rathole():
 @cli.command('uninstall-rathole')
 def uninstall_rathole():
     cmd = [Command.uninstall_rathole.value]
+    run(cmd)
+
+
+@cli.command('create-tunnel')
+@click.option('--type', '-t', type=str, help='Tunnel type: iran or kharej', required=True)
+@click.option('--tunnel-port', '-p', type=str, help='Tunnel port', required=True)
+@click.option('--config-ports', '-c', type=str, help='Config ports (comma-separated)', required=True)
+@click.option('--token', '-k', type=str, help='Authentication token', required=True)
+@click.option('--server-ip', '-s', type=str, help='Server IP (required for kharej)', default='')
+@click.option('--transport', type=str, help='Transport type', default='tcp')
+@click.option('--nodelay', type=str, help='TCP nodelay', default='true')
+@click.option('--heartbeat', type=str, help='Heartbeat', default='true')
+@click.option('--ipv6', type=str, help='Use IPv6', default='false')
+def create_tunnel(type, tunnel_port, config_ports, token, server_ip, transport, nodelay, heartbeat, ipv6):
+    cmd = [Command.create_tunnel.value, type, tunnel_port, config_ports, token]
+    if server_ip:
+        cmd.append(f'server_ip={server_ip}')
+    cmd.append(f'transport={transport}')
+    cmd.append(f'nodelay={nodelay}')
+    cmd.append(f'heartbeat={heartbeat}')
+    cmd.append(f'ipv6={ipv6}')
     run(cmd)
 
 
