@@ -1,17 +1,60 @@
-root@opsopsops:/opt/hiddify-manager# ls -la /opt/hiddify-manager/ssl/65.108.87.237.sslip.io*
--rw------- 1 root root 2885 Jan  6 22:15 /opt/hiddify-manager/ssl/65.108.87.237.sslip.io.crt
--rw------- 1 root root  227 Jan  6 22:15 /opt/hiddify-manager/ssl/65.108.87.237.sslip.io.crt.key
-root@opsopsops:/opt/hiddify-manager# grep -r "ssl" /opt/hiddify-manager/haproxy/haproxy.cfg | head -10
-  bind abns@https_in_http_mode accept-proxy allow-0rtt ssl crt /opt/hiddify-manager/ssl/ alpn h3,h2,http/1.1
-  bind quic4@:443,quic6@:443 v4v6 tfo ssl crt /opt/hiddify-manager/ssl/ alpn h3
-    bind abns@https_in_ssl tfo accept-proxy ssl crt /opt/hiddify-manager/ssl/ alpn h2,http/1.1,h3 allow-0rtt
-    acl h2 ssl_fc_alpn -i h2
-    acl h3 ssl_fc_alpn -i h3
-    tcp-request content accept if { req.ssl_hello_type 1 }
-    acl tls1_2 req.ssl_ver 3.3
-    acl tls1_3 req.ssl_ver 3.4
-    #acl alpnh2 req.ssl_alpn h2
-    use_backend to_https_in_ssl if is_cdn
-root@opsopsops:/opt/hiddify-manager# ss -tlnp | grep 443
-LISTEN 0      4096         0.0.0.0:443        0.0.0.0:*    users:(("haproxy",pid=1917710,fd=8))
-LISTEN 0      4096               *:443              *:*    users:(("haproxy",pid=1917710,fd=11))
+(.venv313) root@opsopsops:/opt/hiddify-manager/hiddify-panel/src# python3 -c "
+> import sys
+> sys.path.insert(0, '/opt/hiddify-manager/hiddify-panel/src')
+> from hiddifypanel import create_app
+> app = create_app()
+> for rule in app.url_map.iter_rules():
+>     if 'tunnel' in rule.rule.lower():
+>         print(rule.rule, '->', rule.endpoint)
+> "
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    app = create_app()
+  File "/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/base.py", line 58, in create_app
+    app.config.load_extensions("EXTENSIONS")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dynaconf.py", line 231, in load_extensions
+    initializer(app)
+    ~~~~~~~~~~~^^^^^
+  File "/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/database.py", line 74, in init_app
+    db.init_app(app)
+    ~~~~~~~~~~~^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 355, in init_app
+    raise RuntimeError(
+        "Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set."
+    )
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+
+
+
+
+
+
+
+(.venv313) root@opsopsops:/opt/hiddify-manager/hiddify-panel/src# source /opt/hiddify-manager/.venv313/bin/activate
+(.venv313) root@opsopsops:/opt/hiddify-manager/hiddify-panel/src# python3 -c "
+> import sys
+> sys.path.insert(0, '/opt/hiddify-manager/hiddify-panel/src')
+> from hiddifypanel import create_app
+> app = create_app()
+> for rule in app.url_map.iter_rules():
+>     if 'tunnel' in rule.rule.lower():
+>         print(rule.rule, '->', rule.endpoint)
+> "
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    app = create_app()
+  File "/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/base.py", line 58, in create_app
+    app.config.load_extensions("EXTENSIONS")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/dynaconf/contrib/flask_dynaconf.py", line 231, in load_extensions
+    initializer(app)
+    ~~~~~~~~~~~^^^^^
+  File "/opt/hiddify-manager/hiddify-panel/src/hiddifypanel/database.py", line 74, in init_app
+    db.init_app(app)
+    ~~~~~~~~~~~^^^^^
+  File "/opt/hiddify-manager/.venv313/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 355, in init_app
+    raise RuntimeError(
+        "Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set."
+    )
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
