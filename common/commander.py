@@ -27,6 +27,8 @@ class Command(StrEnum):
     install_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/install_rathole.sh')
     uninstall_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/uninstall_rathole.sh')
     create_tunnel = os.path.join(HIDDIFY_DIR, 'other/rathole/create_tunnel.sh')
+    delete_tunnel = os.path.join(HIDDIFY_DIR, 'other/rathole/delete_tunnel.sh')
+    control_tunnel = os.path.join(HIDDIFY_DIR, 'other/rathole/control_tunnel.sh')
     id = 'id'
 
 
@@ -194,6 +196,23 @@ def create_tunnel(type, tunnel_port, config_ports, token, server_ip, transport, 
     cmd.append(f'nodelay={nodelay}')
     cmd.append(f'heartbeat={heartbeat}')
     cmd.append(f'ipv6={ipv6}')
+    run(cmd)
+
+
+@cli.command('delete-tunnel')
+@click.option('--type', '-t', type=str, help='Tunnel type: iran or kharej', required=True)
+@click.option('--tunnel-port', '-p', type=str, help='Tunnel port', required=True)
+def delete_tunnel(type, tunnel_port):
+    cmd = [Command.delete_tunnel.value, type, tunnel_port]
+    run(cmd)
+
+
+@cli.command('control-tunnel')
+@click.option('--action', '-a', type=str, help='Action: start, stop, restart, status, enable, disable', required=True)
+@click.option('--type', '-t', type=str, help='Tunnel type: iran or kharej', required=True)
+@click.option('--tunnel-port', '-p', type=str, help='Tunnel port', required=True)
+def control_tunnel(action, type, tunnel_port):
+    cmd = [Command.control_tunnel.value, action, type, tunnel_port]
     run(cmd)
 
 
