@@ -25,6 +25,7 @@ class Command(StrEnum):
     # apply-users command is actually "install.sh apply_users"
     apply_users = os.path.join(HIDDIFY_DIR, 'install.sh')
     install_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/install_rathole.sh')
+    uninstall_rathole = os.path.join(HIDDIFY_DIR, 'other/rathole/uninstall_rathole.sh')
     id = 'id'
 
 
@@ -165,6 +166,12 @@ def update_wg_usage():
 @cli.command('install-rathole')
 def install_rathole():
     cmd = [Command.install_rathole.value]
+    run(cmd)
+
+
+@cli.command('uninstall-rathole')
+def uninstall_rathole():
+    cmd = [Command.uninstall_rathole.value]
     run(cmd)
 
 

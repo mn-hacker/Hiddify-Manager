@@ -31,6 +31,9 @@ unzip -o rathole.zip
 if [ -f "$TMP_DIR/rathole" ]; then
     cp "$TMP_DIR/rathole" "$RATHOLE_DIR/rathole"
     chmod +x "$RATHOLE_DIR/rathole"
+    # Make directory writable for hiddify-panel to create config files
+    chmod 755 "$RATHOLE_DIR"
+    chown -R hiddify-panel:hiddify-panel "$RATHOLE_DIR" 2>/dev/null || chmod 777 "$RATHOLE_DIR"
     echo "Rathole installed successfully!"
 else
     echo "Error: rathole binary not found in archive"
